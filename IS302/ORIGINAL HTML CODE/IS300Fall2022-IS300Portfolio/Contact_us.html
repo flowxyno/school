@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <title>Contact Us</title>
+   <link href="Reset.css" rel="stylesheet" />
+   <link href="Styles.css" rel="stylesheet" />
+   <link href="Form.css" rel="stylesheet" />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="submit.js"></script>
+</head>
+<body>
+   <header>
+      <img src="banner.jpg" alt="Image" usemap="#home" id="banner" />
+		<map name="home">
+			<area shape="rect" coords="10, 10, 400, 200" href="Home_Page.html" alt="Home Page" />
+		</map>
+	  <nav class="horizontal">
+			<ul>
+				<li><a href="Home_Page.html">Home</a></li>
+				<li><a href="Brittany.html">Brittany</a></li>
+				<li><a href="Charlie.html">Charlie</a></li>
+				<li><a href="Matthew.html">Matthew</a></li>
+				<li><a href="Tracy.html">Tracy</a></li>
+			</ul>
+	   </nav>
+   </header>
+		<article><br><br>
+	<form id="input" action="#" method="post">
+		<legend> Contact Us </legend><br><br>
+			
+    <label for="titleBox">Title</label>
+    <input type="text" name="title" id="titleBox" list="titleList"/>
+      <datalist id="titleList">
+        <option value="Mr.">
+        <option value="Mrs.">
+        <option value="Ms.">
+        <option value="Prof.">
+        <option value="Dr.">
+      </datalist>
+        
+    <label for="fnBox">First Name*</label>
+    <input type="text" name="firstName" id="fnBox" required />
+
+    <label for="lnBox">Last Name*</label>
+    <input type="text" name="lastName" id="lnBox" required /> 
+  
+    <label for="mesBox">Message*</label>
+    <textarea name="message" id="mesBox"></textarea>
+  		
+		<label for="mailBox">E-mail</label>
+    <input type="email" name="email" id="mailBox" />
+				
+		<p><input type="submit" name="send" value="Send"></p>
+	</form>
+	</article><br><br>
+</body>
+	<script>
+		$("#banner").hide()
+		$("#banner").fadeIn(2000) 
+	</script>
+</html>
