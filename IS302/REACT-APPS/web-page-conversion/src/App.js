@@ -5,7 +5,7 @@ function App() {
   return (
    <>
     <header>
-		  <img src="banner.jpg" alt="Image" usemap="#home" id="banner" />
+		  <img src="banner.jpg" alt="" usemap="#home" id="banner" />
 		  <map name="home">
 			  <area shape="rect" coords="10, 10, 400, 200" href="Home_Page.html" alt="Home Page" />
 		  </map>
@@ -23,7 +23,7 @@ function App() {
 	  <div class="wrapper">
 		  <div >
 			  <figure class="image" >
-				  <img src="TPhoto.jpg" alt="Image" />
+				  <img src="TPhoto.jpg" alt="" />
 				  <figcaption> Tracy Harvey </figcaption>
 			  </figure>
 		  </div>
