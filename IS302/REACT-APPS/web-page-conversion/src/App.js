@@ -5,11 +5,11 @@ function App() {
   return (
    <>
     <header>
-		  <img src="banner.jpg" alt="" usemap="#home" id="banner" />
+		  <img src="banner.jpg" alt="" useMap="#home" id="banner" />
 		  <map name="home">
 			  <area shape="rect" coords="10, 10, 400, 200" href="Home_Page.html" alt="Home Page" />
 		  </map>
-		  <nav class="horizontal">
+		  <nav className="horizontal">
 			  <ul>
 				  <li><a href="Home_Page.html">Home</a></li>
 				  <li><a href="Tracy.html">Tracy</a></li>
@@ -20,20 +20,20 @@ function App() {
 		  </nav>
 	  </header>
 
-	  <div class="wrapper">
+	  <div className="wrapper">
 		  <div >
-			  <figure class="image" >
+			  <figure className="image">
 				  <img src="TPhoto.jpg" alt="" />
 				  <figcaption> Tracy Harvey </figcaption>
 			  </figure>
 		  </div>
-		  <div class="text" >
+		  <div className="text" >
 			  <br/>
 			  <h1>Heading</h1>
 			  <br/>
 			  <p>Text.</p>
 			  <br/>
-        <br/>
+			  <br/>
 			  <h2>Heading</h2>
 			  <br/>
 			  <p>Text.</p>
