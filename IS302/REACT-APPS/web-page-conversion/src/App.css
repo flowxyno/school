@@ -19,6 +19,7 @@ header nav ul {
   grid-template-columns: repeat(5, 1fr);
   padding: .5% 5% .5% 12%;
   Text-align: center;
+  list-style: none;
 }
 header nav ul li a {
    color: black;
