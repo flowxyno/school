@@ -1,0 +1,5 @@
+1.  Open Power Shell or a teminal in VS code 
+2.  Navigate to you React app folder in the command line
+3.  Start your dev environment
+        npm start
+4.  Navigate in VS code to to your React app folder and happy hacking
