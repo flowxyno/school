@@ -1,0 +1,39 @@
+1. Make a normal component
+    // function NewComponent{
+    //  return(
+    //      <>
+    //          Hello World !!!!
+    //      </>
+    //    )
+    //  }
+2. Add in a state variable 
+    // function NewComponent{
+    //  let [count, setCount] = React.useState (0)
+
+    //  return(
+    //      <>
+    //          Hello World !!!!
+    //      </>
+    //    )
+    //  }
+3. Render the state variable
+    // function NewComponent{
+    //  let [count, setCount] = React.useState (0)
+    //  return(
+    //      <>
+    //          I've been clicked {count} amount of times
+    //      </>
+    //    )
+    //  }
+4. Add an onClick that changes the state
+    // function NewComponent{
+    //  let [count, setCount] = React.useState (0)
+    //  return(
+    //      <>
+    //          <button onClick={
+    //              ()=>{setCount(count + 1)}}
+    //              >click me </button>
+    //          I've been clicked {count} amount of times
+    //      </>
+    //    )
+    //  }

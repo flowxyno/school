@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import * as React from 'react';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
 			  <h1>Heading</h1>
 			  <br/>
 			  <p>Text.</p>
+			  <NewComponent/>
 			  <br/>
 			  <br/>
 			  <h2>Heading</h2>
@@ -46,6 +48,13 @@ function App() {
 	  </footer>
    </>
   );
+}
+
+function NewComponent(){
+	
+return <>
+	Hello World !!!
+</>
 }
 
 export default App;
