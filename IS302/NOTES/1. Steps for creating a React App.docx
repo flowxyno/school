@@ -1,6 +1,0 @@
-1.  Download node.js from nodejs.org
-2.  Check for git and if you need to do a google search for git install for windows
-3.  Open Power Shell or open a terminal in Visual Studios Code
-4.  Navigate to the directory that you want to make the react app
-5.  Create React app
-        npx create-react-app name-of-app
