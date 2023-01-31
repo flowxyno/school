@@ -1,25 +1,60 @@
 import logo from './logo.svg';
 import './App.css';
+import * as React from 'react';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="tphoto.jpg"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+    <header>
+		  <img src="banner.jpg" alt="" useMap="#home" id="banner" />
+		  <map name="home">
+			  <area shape="rect" coords="10, 10, 400, 200" href="Home_Page.html" alt="Home Page" />
+		  </map>
+		  <nav className="horizontal">
+			  <ul>
+				  <li><a href="Home_Page.html">Home</a></li>
+				  <li><a href="Tracy.html">Tracy</a></li>
+				  <li><a href="Brittany.html">Brittany</a></li>
+				  <li><a href="Charlie.html">Charlie</a></li>
+				  <li><a href="Matthew.html">Matthew</a></li>
+			  </ul>
+		  </nav>
+	  </header>
+
+	  <div className="wrapper">
+		  <div >
+			  <figure className="image">
+				  <img src="TPhoto.jpg" alt="" />
+				  <figcaption> Tracy Harvey </figcaption>
+			  </figure>
+		  </div>
+		  <div className="text" >
+			  <br/>
+			  <h1>Heading</h1>
+			  <br/>
+			  <p>Text.</p>
+			  <NewComponent/>
+			  <br/>
+			  <br/>
+			  <h2>Heading</h2>
+			  <br/>
+			  <p>Text.</p>
+			  <br/>
+		  </div>
+	  </div>
+
+	  <footer>
+		  <a href="Contact_us.html">Contact Us</a>
+	  </footer>
+   </>
   );
+}
+
+function NewComponent(){
+	
+return <>
+	Hello World !!!
+</>
 }
 
 export default App;
