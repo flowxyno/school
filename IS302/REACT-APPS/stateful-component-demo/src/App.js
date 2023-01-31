@@ -11,8 +11,12 @@ function App() {
 };
 
 function NewComponent() {
+  let [count, setCount] = React.useState (0)
+
   return <>
-      Hello World !!!
+      <button onClick={()=>{setCount(count + 1)}}>Click Me</button>
+      <br/>
+      I've been clicked {count} amount of times!
     </>
 }
 
