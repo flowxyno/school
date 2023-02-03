@@ -27,12 +27,13 @@ function App() {
 				  <img src="TPhoto.jpg" alt="" />
 				  <figcaption> Tracy Harvey </figcaption>
 			  </figure>
+			  <p id="wc"><WeatherComponent/></p>
 		  </div>
 		  <div className="text" >
 			  <br/>
 			  <h1>Heading</h1>
 			  <br/>
-			  <WeatherComponent/>
+			  <p>Text</p>
 			  <br/>
 			  <br/>
 			  <h2>Heading</h2>
@@ -63,8 +64,8 @@ function WeatherComponent(){
 			let firstPeriod = data.properties.periods[0]
 			setShortForecast(firstPeriod.shortForecast)
 			setTemp(firstPeriod.temperature)
-		  });
-	  })
+			});
+	})
 
 	React.useEffect(() => {
 		fetch('https://api.weather.gov/gridpoints/APX/39,65/forecast/hourly')
@@ -83,9 +84,9 @@ function WeatherComponent(){
 		return <>
 			<b><u>This is the Forcast for Olalla, WA:</u></b>
 			<br/>
-			The forecast is: {shortForecast }
+			The forecast is: {shortForecast}
 			<br/>
-			The temperature is: { temp } degrees
+			The temperature is: {temp} degrees
 	
 			<br/>
 			<button onClick={()=>{
@@ -96,9 +97,9 @@ function WeatherComponent(){
 		return<>
 		  <b><u>This is the Forcast for Ellsworth, MI:</u></b>
 			<br/>
-			The forecast is: {shortForecast1 }
+			The forecast is: {shortForecast1}
 			<br/>
-			The temperature is: { temp1 } degrees
+			The temperature is: {temp1} degrees
 	
 			<br/>
 			<button onClick={()=>{
