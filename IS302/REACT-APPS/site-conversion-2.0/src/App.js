@@ -32,8 +32,7 @@ function App() {
 			  <br/>
 			  <h1>Heading</h1>
 			  <br/>
-			  <p>Text.</p>
-			  <NewComponent/>
+			  <WeatherComponent/>
 			  <br/>
 			  <br/>
 			  <h2>Heading</h2>
@@ -50,11 +49,63 @@ function App() {
   );
 }
 
-function NewComponent(){
+function WeatherComponent(){
+	let [shortForecast, setShortForecast] = React.useState("No data yet")
+	let [temp, setTemp] = React.useState("No data yet")
+	let [shortForecast1, setShortForecast1] = React.useState("No data yet")
+	let [temp1, setTemp1] = React.useState("No data yet")
+	let [city, setCity] = React.useState(true)
+
+	React.useEffect(() => {
+		fetch('https://api.weather.gov/gridpoints/SEW/115,60/forecast/hourly')
+		  .then((response) => response.json())
+		  .then((data) => {
+			let firstPeriod = data.properties.periods[0]
+			setShortForecast(firstPeriod.shortForecast)
+			setTemp(firstPeriod.temperature)
+		  });
+	  })
+
+	React.useEffect(() => {
+		fetch('https://api.weather.gov/gridpoints/APX/39,65/forecast/hourly')
+		  .then((response) => response.json())
+		  .then((data) => {
+			console.log(data)
+			let firstPeriod = data.properties.periods[0]
+			setShortForecast1(firstPeriod.shortForecast)
+			setTemp1(firstPeriod.temperature)
+			//console.log(firstPeriod.temperature)
+		  });
+	  })
 	
-return <>
-	Hello World !!!
-</>
-}
+
+	  if(city){
+		return <>
+			<b><u>This is the Forcast for Olalla, WA:</u></b>
+			<br/>
+			The forecast is: {shortForecast }
+			<br/>
+			The temperature is: { temp } degrees
+	
+			<br/>
+			<button onClick={()=>{
+			setCity(false)
+			}}>Ellsworth</button>
+			</>
+	  }else{
+		return<>
+		  <b><u>This is the Forcast for Ellsworth, MI:</u></b>
+			<br/>
+			The forecast is: {shortForecast1 }
+			<br/>
+			The temperature is: { temp1 } degrees
+	
+			<br/>
+			<button onClick={()=>{
+			setCity(true)
+			}}>Olalla</button>
+		</>
+	  }
+	}
 
 export default App;
