@@ -65,9 +65,7 @@ function WeatherComponent(){
 			setShortForecast(firstPeriod.shortForecast)
 			setTemp(firstPeriod.temperature)
 			});
-	})
 
-	React.useEffect(() => {
 		fetch('https://api.weather.gov/gridpoints/APX/39,65/forecast/hourly')
 		  .then((response) => response.json())
 		  .then((data) => {
