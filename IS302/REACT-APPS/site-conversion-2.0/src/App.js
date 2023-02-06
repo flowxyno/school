@@ -31,14 +31,14 @@ function App() {
 		  </div>
 		  <div className="text" >
 			  <br/>
-			  <h1>Heading</h1>
+			  <h1><b><u>A little bit about me</u></b></h1>
 			  <br/>
-			  <p>Text</p>
+			  <AboutMe/>
 			  <br/>
 			  <br/>
-			  <h2>Heading</h2>
+			  <h2><b><u>Hobbies and interests</u></b></h2>
 			  <br/>
-			  <p>Text.</p>
+			  <p><Hobbies/></p>
 			  <br/>
 		  </div>
 	  </div>
@@ -107,5 +107,21 @@ function WeatherComponent(){
 		</>
 	  }
 	}
+
+function AboutMe() {
+	return <>
+	<p>Testing Testing
+
+	This is a test</p>
+	</>
+}
+
+function Hobbies() {
+	return <>
+	Testing Testing 
+
+	This is also a test
+	</>
+}
 
 export default App;
