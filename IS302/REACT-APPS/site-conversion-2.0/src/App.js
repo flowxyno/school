@@ -71,7 +71,6 @@ function WeatherComponent(){
 		fetch('https://api.weather.gov/gridpoints/APX/39,65/forecast/hourly')
 		  .then((response) => response.json())
 		  .then((data) => {
-			console.log(data)
 			let firstPeriod = data.properties.periods[0]
 			setShortForecast1(firstPeriod.shortForecast)
 			setTemp1(firstPeriod.temperature)
