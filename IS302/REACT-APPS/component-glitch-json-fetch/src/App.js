@@ -5,12 +5,12 @@ import * as React from 'react';
 function App() {
   return (
     <>
-      <Security/>
+      <PastPets/>
     </>
   );
 }
 
-function Security() {
+function PastPets() {
   let [pet1, setPet1] = React.useState("No data yet")
   let [pet2, setPet2] = React.useState("No data yet")
   let [species1, setSpecies1] = React.useState("No data yet")
