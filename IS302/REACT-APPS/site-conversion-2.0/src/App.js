@@ -27,18 +27,18 @@ function App() {
 				  <img src="TPhoto.jpg" alt="" />
 				  <figcaption> Tracy Harvey </figcaption>
 			  </figure>
+			  <p id="wc"><WeatherComponent/></p>
 		  </div>
 		  <div className="text" >
 			  <br/>
-			  <h1>Heading</h1>
+			  <h1><b><u>A little bit about me</u></b></h1>
 			  <br/>
-			  <p>Text.</p>
-			  <NewComponent/>
+			  <AboutMe/>
 			  <br/>
 			  <br/>
-			  <h2>Heading</h2>
+			  <h2><b><u>Hobbies and interests</u></b></h2>
 			  <br/>
-			  <p>Text.</p>
+			  <p><Hobbies/></p>
 			  <br/>
 		  </div>
 	  </div>
@@ -50,11 +50,76 @@ function App() {
   );
 }
 
-function NewComponent(){
+function WeatherComponent(){
+	let [shortForecast, setShortForecast] = React.useState("No data yet")
+	let [temp, setTemp] = React.useState("No data yet")
+	let [shortForecast1, setShortForecast1] = React.useState("No data yet")
+	let [temp1, setTemp1] = React.useState("No data yet")
+	let [city, setCity] = React.useState(true)
+
+	React.useEffect(() => {
+		fetch('https://api.weather.gov/gridpoints/SEW/115,60/forecast/hourly')
+		  .then((response) => response.json())
+		  .then((data) => {
+			let firstPeriod = data.properties.periods[0]
+			setShortForecast(firstPeriod.shortForecast)
+			setTemp(firstPeriod.temperature)
+			});
+
+		fetch('https://api.weather.gov/gridpoints/APX/39,65/forecast/hourly')
+		  .then((response) => response.json())
+		  .then((data) => {
+			let firstPeriod = data.properties.periods[0]
+			setShortForecast1(firstPeriod.shortForecast)
+			setTemp1(firstPeriod.temperature)
+			//console.log(firstPeriod.temperature)
+		  });
+	  })
 	
-return <>
-	Hello World !!!
-</>
+
+	  if(city){
+		return <>
+			<b><u>This is the Forcast for Olalla, WA:</u></b>
+			<br/>
+			The forecast is: {shortForecast}
+			<br/>
+			The temperature is: {temp} degrees
+	
+			<br/>
+			<button onClick={()=>{
+			setCity(false)
+			}}>Ellsworth</button>
+			</>
+	  }else{
+		return<>
+		  <b><u>This is the Forcast for Ellsworth, MI:</u></b>
+			<br/>
+			The forecast is: {shortForecast1}
+			<br/>
+			The temperature is: {temp1} degrees
+	
+			<br/>
+			<button onClick={()=>{
+			setCity(true)
+			}}>Olalla</button>
+		</>
+	  }
+	}
+
+function AboutMe() {
+	return <>
+	<p>Testing Testing
+
+	This is a test</p>
+	</>
+}
+
+function Hobbies() {
+	return <>
+	Testing Testing 
+
+	This is also a test
+	</>
 }
 
 export default App;

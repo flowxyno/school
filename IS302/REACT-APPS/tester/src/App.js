@@ -3,16 +3,12 @@ import './App.css';
 import * as React from 'react'
 
 function App() {
-  return (<>
-    <PropUp
-    name="Tracy"
-    pname="Pip"
-    color="orange"
-    />
-  </>
-    
+  return (
+    <>
+      
+    </>
   );
-}
+};
 
 function PropUp(stuff) {
   return <>
