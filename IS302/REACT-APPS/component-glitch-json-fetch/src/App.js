@@ -11,20 +11,28 @@ function App() {
 }
 
 function Security() {
-  let [intrud, setIntrud] = React.useState("No data yet")
-  let [time, setTime] = React.useState("No data yet")
+  let [pet1, setPet1] = React.useState("No data yet")
+  let [pet2, setPet2] = React.useState("No data yet")
+  let [species1, setSpecies1] = React.useState("No data yet")
+  let [species2, setSpecies2] = React.useState("No data yet")
+  let [status, setStatus] = React.useState("No data yet")
+
 
   React.useEffect(() => {
-    fetch('https://heartbreaking-silly-continent.glitch.me/') //this URL will change almost all the time
+    fetch('https://aeolian-billowy-fern.glitch.me/') //this URL will change almost all the time
       .then((response) => response.json())
       .then((data) => {
-        setIntrud(data.dataPoints[0].intruders)
-        setTime(data.dataPoints[0].time)
+        setPet1(data.myPets[0].name)
+        setPet2(data.myPets[1].name)
+        setSpecies1(data.myPets[0].type)
+        setSpecies2(data.myPets[1].type)
+        setStatus(data.myPets[0].status)
       });
   })
 
   return <> 
-    There were {intrud} intruders in the house at {time}
+    Stephen's previous pets were named {pet1} which was a {species1} and {pet2} which was also a {species2}.
+    Sadly the are both {status}.
   </>
 }
 

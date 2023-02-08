@@ -9,9 +9,9 @@ app.use(cors()) // tells Express to use `cors`, and solves the issue
 app.get('/', (req, res) => {
   res.send({
     "dataPoints": [
-      {"time": "5pm", "Intruders": "0"},
-      {"time": "6pm", "Intruders": "1"},
-      {"time": "7pm", "Intruders": "0"}
+      {"time": "5pm", "intruders": "0"},
+      {"time": "6pm", "intruders": "1"},
+      {"time": "7pm", "intruders": "0"}
     ]
   })
 })
