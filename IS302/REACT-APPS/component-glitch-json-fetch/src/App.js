@@ -15,11 +15,11 @@ function Security() {
   let [time, setTime] = React.useState("No data yet")
 
   React.useEffect(() => {
-    fetch('https://future-jade-radish.glitch.me') //this URL will change almost all the time
+    fetch('https://heartbreaking-silly-continent.glitch.me/') //this URL will change almost all the time
       .then((response) => response.json())
       .then((data) => {
-        setIntrud(data.dataPoints[1].intruders)
-        setTime(data.dataPoints[1].time)
+        setIntrud(data.dataPoints[0].intruders)
+        setTime(data.dataPoints[0].time)
       });
   })
 
