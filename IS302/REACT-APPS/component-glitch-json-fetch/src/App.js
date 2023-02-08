@@ -12,17 +12,19 @@ function App() {
 
 function Security() {
   let [intrud, setIntrud] = React.useState("No data yet")
+  let [time, setTime] = React.useState("No data yet")
 
   React.useEffect(() => {
-    fetch('https://shimmering-nutritious-bait.glitch.me/')
+    fetch('https://future-jade-radish.glitch.me') //this URL will change almost all the time
       .then((response) => response.json())
       .then((data) => {
-        setIntrud(data.dataPoints[1])
+        setIntrud(data.dataPoints[1].intruders)
+        setTime(data.dataPoints[1].time)
       });
   })
 
   return <> 
-    The forecast is: { intrud }
+    There were {intrud} intruders in the house at {time}
   </>
 }
 
