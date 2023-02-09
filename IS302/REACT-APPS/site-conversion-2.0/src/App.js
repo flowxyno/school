@@ -38,7 +38,7 @@ function App() {
 			  <br/>
 			  <h2><b><u>Hobbies and interests</u></b></h2>
 			  <br/>
-			  <p><Hobbies/></p>
+			  <Hobbies/>
 			  <br/>
 		  </div>
 	  </div>
@@ -108,9 +108,10 @@ function WeatherComponent(){
 
 function AboutMe() {
 	return <>
-	<p>Testing Testing
-
-	This is a test</p>
+		<p>
+			A little bit about me. I was born in Ellsworth Michigan, which is a place that you can be completely forgiven for having never heard of it, 
+			it is one of those blink and you miss it places. 
+		</p>>
 	</>
 }
 
