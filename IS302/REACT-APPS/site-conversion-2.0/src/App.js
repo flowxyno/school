@@ -31,15 +31,18 @@ function App() {
 		  </div>
 		  <div className="text" >
 			  <br/>
-			  <h1><b><u>A little bit about me</u></b></h1>
+			  <h1><b><u>Personal Projects:</u></b></h1>
 			  <br/>
-			  <AboutMe/>
+			  <Projects/>
 			  <br/>
 			  <br/>
 			  <h2><b><u>Hobbies and interests</u></b></h2>
 			  <br/>
-			  <Hobbies/>
+			  
 			  <br/>
+		  </div>
+		  <div>
+
 		  </div>
 	  </div>
 
@@ -79,7 +82,7 @@ function WeatherComponent(){
 
 	  if(city){
 		return <>
-			<b><u>This is the Forcast for Olalla, WA:</u></b>
+			<b><u>Forcast for Olalla, WA:</u></b>
 			<br/>
 			The forecast is: {shortForecast}
 			<br/>
@@ -92,7 +95,7 @@ function WeatherComponent(){
 			</>
 	  }else{
 		return<>
-		  <b><u>This is the Forcast for Ellsworth, MI:</u></b>
+		  <b><u>Forcast for Ellsworth, MI:</u></b>
 			<br/>
 			The forecast is: {shortForecast1}
 			<br/>
@@ -108,19 +111,51 @@ function WeatherComponent(){
 
 function AboutMe() {
 	return <>
+		<h2><b><u>A little about me:</u></b></h2>
 		<p>
 			A little bit about me. I was born in Ellsworth Michigan, which is a place that you can be completely forgiven for having never heard of it, 
 			it is one of those blink and you miss it places. 
-		</p>>
+		</p>
 	</>
 }
 
 function Hobbies() {
 	return <>
-	Testing Testing 
+	<h2><b><u>Hobbies and interests:</u></b></h2>
 
 	This is also a test
 	</>
+}
+
+function Projects(){
+    let [data, setData] = React.useState(undefined)
+
+    React.useEffect(() => {
+      fetch('https://sideways-burnt-meal.glitch.me')
+        .then((response) => response.json())
+        .then((data) => {
+          setData(data)
+        });
+    })
+
+  return <> 
+
+    {data && <Project project={data.projects[0]}/>}
+	<br/>
+    {data && <Project project={data.projects[1]}/>}
+	<br/>
+    {data && <Project project={data.projects[2]}/>}
+  </>
+}
+
+function Project(props){
+  return <div style={{border: "1px solid black"}}>
+    Name: {props.project.name}
+    <ul>
+      <li>Language: {props.project.languages[0]}</li>
+      <li>Description: {props.project.description}</li>
+    </ul> 
+  </div>
 }
 
 export default App;
