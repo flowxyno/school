@@ -19,7 +19,7 @@ function PastPets() {
 
 
   React.useEffect(() => {
-    fetch('https://aeolian-billowy-fern.glitch.me/') //this URL will change almost all the time
+    fetch('https://precious-carpal-provelone.glitch.me/') //this URL will change almost all the time
       .then((response) => response.json())
       .then((data) => {
         setPet1(data.myPets[0].name)
