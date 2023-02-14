@@ -38,7 +38,7 @@ function App() {
 			  <br/>
 		  </div>
 		  <div className='testing'>
-			  <AboutMe/>
+			  <AandHSwitch/>
 		  </div>
 	  </div>
 
@@ -107,15 +107,19 @@ function WeatherComponent(){
 
 function AboutMe() {
 	return <>
-		<br/>
-		<br/>
+	<br/>
 		<h2><b><u>A little about me:</u></b></h2>
 		<p>
-			A little bit about me. I was born in Ellsworth Michigan, which is a place that you can be completely forgiven for having never heard of it, 
-			it is one of those blink and you miss it places. I joined the Army at 17, I went to basic training in Ft Jackson, SC and then on to Advanaced Individual
-			Training (AIT) in Ft Gordon, GA. Since the I have been kind of all over the place with the bulk of my active time in Ft. Lewis. I started out in microwave
-			line of site communications and from there went to the Army's first packet switched network and ended my career doing team / network management for 
-			an entire portable ISP called a Joint Network Node (JNN).
+			A little bit about me. I was born in Ellsworth Michigan, which is a place that you can be completely forgiven 
+			for having never heard of it, it is one of those blink and you miss it places. 
+			<br/>
+			I joined the Army at 17, and went to basic training in Ft Jackson, SC and from there on to Advanaced Individual
+			Training (AIT) in Ft Gordon, GA. Since then I have been kind of all over the place with the bulk of my active 
+			time in Ft. Lewis. 
+			<br/>
+			I started out in microwave
+			line of site communications and from there went to the Army's first packet switched network and ended my 
+			career doing team / network management for an entire portable ISP called a Joint Network Node (JNN).
 		</p>
 	</>
 }
@@ -123,16 +127,63 @@ function AboutMe() {
 function Hobbies() {
 	return <>
 	<h2><b><u>Hobbies and interests:</u></b></h2>
-
-	This is also a test
+	<br/>
+	<ul>
+		<li>Video Games</li>
+			<ul>
+				<li>Factory builders</li>
+				<li>Survival</li>
+				<li>First Person Shooters (FPS)</li>
+				<li>Virtual Reality (VR)</li>
+			</ul>
+		<li>Board Games</li>
+		<li>Role Playing Games</li>
+			<ul>
+				<li>Dungeons and Dragons (D&D)</li>
+				<li>Pathfinder</li>
+				<li>ShadowRun</li>
+				<li>BattleTech</li>
+			</ul>
+		<li>Reading</li>
+			<ul>
+				<li>Sci-Fi</li>
+				<li>Fantasy</li>
+				<li>Horror</li>
+			</ul>
+		<li>Movies</li>
+	</ul>
+	
 	</>
+}
+
+function AandHSwitch() {
+	let [tog, setTog] = React.useState(false)
+	
+	if(tog) {
+		return <>
+			<Hobbies/>
+			<br/>
+			<button onClick={() => {
+				setTog(false)
+			}}>About Me</button>
+		</>
+	}else{
+		return <>
+			<AboutMe/>
+			<br/>
+			<button onClick={() => {
+				setTog(true)
+			}}>My Hobbies</button>
+		</>
+	}
+	
 }
 
 function Projects(){
     let [data, setData] = React.useState(undefined)
 
     React.useEffect(() => {
-      fetch('https://subsequent-famous-foxglove.glitch.me')
+      fetch('https://treasure-admitted-cashew.glitch.me/')
         .then((response) => response.json())
         .then((data) => {
           setData(data)
