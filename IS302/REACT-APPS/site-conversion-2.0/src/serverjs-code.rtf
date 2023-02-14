@@ -1,0 +1,21 @@
+const express = require('express')
+const cors = require("cors") // importing the `cors` package
+const app = express()
+const port = 3000
+
+
+app.use(cors()) // tells Express to use `cors`, and solves the issue
+
+app.get('/', (req, res) => {
+  res.send({
+    "dataPoints": [
+      {"time": "5pm", "intruders": "0"},
+      {"time": "6pm", "intruders": "1"},
+      {"time": "7pm", "intruders": "0"}
+    ]
+  })
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})

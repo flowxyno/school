@@ -63,7 +63,7 @@ body > p{
 }
 .wrapper {
 			display: grid;
-			grid-template-columns: 25% 1fr;
+         grid-template-columns: 25% 1fr 25%;
 			gap: 10px;
 }
 .image {

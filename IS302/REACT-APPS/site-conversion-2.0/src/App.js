@@ -36,13 +36,9 @@ function App() {
 			  <Projects/>
 			  <br/>
 			  <br/>
-			  <h2><b><u>Hobbies and interests</u></b></h2>
-			  <br/>
-			  
-			  <br/>
 		  </div>
-		  <div>
-
+		  <div className='testing'>
+			  <AboutMe/>
 		  </div>
 	  </div>
 
@@ -111,10 +107,15 @@ function WeatherComponent(){
 
 function AboutMe() {
 	return <>
+		<br/>
+		<br/>
 		<h2><b><u>A little about me:</u></b></h2>
 		<p>
 			A little bit about me. I was born in Ellsworth Michigan, which is a place that you can be completely forgiven for having never heard of it, 
-			it is one of those blink and you miss it places. 
+			it is one of those blink and you miss it places. I joined the Army at 17, I went to basic training in Ft Jackson, SC and then on to Advanaced Individual
+			Training (AIT) in Ft Gordon, GA. Since the I have been kind of all over the place with the bulk of my active time in Ft. Lewis. I started out in microwave
+			line of site communications and from there went to the Army's first packet switched network and ended my career doing team / network management for 
+			an entire portable ISP called a Joint Network Node (JNN).
 		</p>
 	</>
 }
@@ -131,7 +132,7 @@ function Projects(){
     let [data, setData] = React.useState(undefined)
 
     React.useEffect(() => {
-      fetch('https://sideways-burnt-meal.glitch.me')
+      fetch('https://subsequent-famous-foxglove.glitch.me')
         .then((response) => response.json())
         .then((data) => {
           setData(data)
