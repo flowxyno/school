@@ -74,7 +74,6 @@ function WeatherComponent(){
 			let firstPeriod = data.properties.periods[0]
 			setShortForecast1(firstPeriod.shortForecast)
 			setTemp1(firstPeriod.temperature)
-			//console.log(firstPeriod.temperature)
 		  });
 	  })
 	
@@ -188,7 +187,7 @@ function Projects(){
     let [data, setData] = React.useState(undefined)
 
     React.useEffect(() => {
-      fetch('https://snapdragon-inexpensive-teal.glitch.me/')
+      fetch('https://bolder-solar-gecko.glitch.me')
         .then((response) => response.json())
         .then((data) => {
           setData(data)
@@ -201,11 +200,11 @@ function Projects(){
 	</Card>
 	<br/>
 	<Card>
-    {data && <Project project={data.projects[1]}/>}
+    	{data && <Project project={data.projects[1]}/>}
 	</Card>
 	<br/>
 	<Card>
-    {data && <Project project={data.projects[2]}/>}
+    	{data && <Project project={data.projects[2]}/>}
 	</Card>
   </>
 }
@@ -214,7 +213,7 @@ function Project(props){
   return <div style={{border: "1px solid black"}}>
     Name: {props.project.name}
     <ul>
-      <li>Language: {props.project.languages[0]}</li>
+      <li>Language: {props.project.languages}</li>
       <li>Description: {props.project.description}</li>
     </ul> 
   </div>
