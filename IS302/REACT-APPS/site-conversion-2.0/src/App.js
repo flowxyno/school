@@ -1,6 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import * as React from 'react';
+import Card from '@mui/material/Card';
+import Button from '@mui/material/Button';
+
 
 function App() {
   return (
@@ -37,7 +40,7 @@ function App() {
 			  <br/>
 			  <br/>
 		  </div>
-		  <div className='testing'>
+		  <div className='AandH'>
 			  <AandHSwitch/>
 		  </div>
 	  </div>
@@ -85,9 +88,10 @@ function WeatherComponent(){
 			The temperature is: {temp} degrees
 	
 			<br/>
-			<button onClick={()=>{
+			<br/>
+			<Button variant="contained" onClick={()=>{
 			setCity(false)
-			}}>Ellsworth</button>
+			}}>Ellsworth</Button>
 			</>
 	  }else{
 		return<>
@@ -98,9 +102,10 @@ function WeatherComponent(){
 			The temperature is: {temp1} degrees
 	
 			<br/>
-			<button onClick={()=>{
+			<br/>
+			<Button variant='contained' onClick={()=>{
 			setCity(true)
-			}}>Olalla</button>
+			}}>Olalla</Button>
 		</>
 	  }
 	}
@@ -163,17 +168,17 @@ function AandHSwitch() {
 		return <>
 			<Hobbies/>
 			<br/>
-			<button onClick={() => {
+			<Button variant='contained' onClick={() => {
 				setTog(false)
-			}}>About Me</button>
+			}}>About Me</Button>
 		</>
 	}else{
 		return <>
 			<AboutMe/>
 			<br/>
-			<button onClick={() => {
+			<Button variant='contained' onClick={() => {
 				setTog(true)
-			}}>My Hobbies</button>
+			}}>My Hobbies</Button>
 		</>
 	}
 	
@@ -183,7 +188,7 @@ function Projects(){
     let [data, setData] = React.useState(undefined)
 
     React.useEffect(() => {
-      fetch('https://treasure-admitted-cashew.glitch.me/')
+      fetch('https://snapdragon-inexpensive-teal.glitch.me/')
         .then((response) => response.json())
         .then((data) => {
           setData(data)
@@ -191,12 +196,17 @@ function Projects(){
     })
 
   return <> 
-
-    {data && <Project project={data.projects[0]}/>}
+	<Card>
+    	{data && <Project project={data.projects[0]}/>}
+	</Card>
 	<br/>
+	<Card>
     {data && <Project project={data.projects[1]}/>}
+	</Card>
 	<br/>
+	<Card>
     {data && <Project project={data.projects[2]}/>}
+	</Card>
   </>
 }
 

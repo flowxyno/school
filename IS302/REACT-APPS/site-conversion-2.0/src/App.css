@@ -76,6 +76,10 @@ body > p{
 .text {
   padding: 0px 0px 0px 15px;
 }
+.AandH {
+   width: 100%;
+	padding: 0px 0px 0px 0px;
+}
 footer {
   background-color: rgb(71, 71, 71);
   color: rgb(231, 231, 231);
