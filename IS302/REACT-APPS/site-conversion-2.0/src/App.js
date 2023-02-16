@@ -160,27 +160,61 @@ function Hobbies() {
 	</>
 }
 
+function Reading() {
+	return <>
+	<h2><b><u>Favorite Book Series:</u></b></h2>
+	<br/>
+	<ul>
+		<li>Sci-Fi</li>
+			<ul>
+				<li>Expeditionary Series</li>
+				<li>Old Man's War</li>
+				<li>Legion of the Damned</li>
+			</ul>
+		<li>Fantasy</li>
+			<ul>
+				<li>Wheel of Time</li>
+				<li>Dragonlance</li>
+				<li>Forgotten Realms</li>
+			</ul>
+		<li>Unsure of Genre</li>
+			<ul>
+				<li>Magitech Series</li>
+			</ul>
+	</ul>
+	
+	</>
+}
+
 function AandHSwitch() {
 	let [tog, setTog] = React.useState(false)
+	let [count,setCount] = React.useState(0)
 	
-	if(tog) {
+	if(count == 0) {
 		return <>
 			<Hobbies/>
 			<br/>
-			<Button variant='contained' onClick={() => {
-				setTog(false)
-			}}>About Me</Button>
+			
 		</>
-	}else{
-		return <>
-			<AboutMe/>
-			<br/>
-			<Button variant='contained' onClick={() => {
-				setTog(true)
-			}}>My Hobbies</Button>
-		</>
+	}else{ 
+		if(count == 1) {
+			return <>
+				<AboutMe/>
+				<br/>
+				
+			</>
+		}else{
+			if(count == 2) {
+				return <>
+					<Reading/>
+				</>
+			}
+			else{
+				setCount = 0
+			}
+		}	
 	}
-	
+	<button onClick={()=>{setCount(count + 1)}}>Click Me</button>
 }
 
 function Projects(){
@@ -195,28 +229,24 @@ function Projects(){
     })
 
   return <> 
-	<Card>
     	{data && <Project project={data.projects[0]}/>}
-	</Card>
 	<br/>
-	<Card>
     	{data && <Project project={data.projects[1]}/>}
-	</Card>
 	<br/>
-	<Card>
     	{data && <Project project={data.projects[2]}/>}
-	</Card>
   </>
 }
 
 function Project(props){
   return <div style={{border: "1px solid black"}}>
+	<Card>
     Name: {props.project.name}
-    <ul>
-      <li>Language: {props.project.languages}</li>
-      <li>Description: {props.project.description}</li>
-	  <li>URL: <a href={props.project.url}>Project Site</a></li>
-    </ul> 
+    	<ul>
+      		<li>Language: {props.project.languages}</li>
+      		<li>Description: {props.project.description}</li>
+	  		<li>URL: <a href={props.project.url}>Project Site</a></li>
+    	</ul> 
+	</Card>
   </div>
 }
 
