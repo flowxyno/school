@@ -190,7 +190,7 @@ function AandHSwitch() {
 	let [tog, setTog] = React.useState(false)
 	let [count,setCount] = React.useState(0)
 	
-	if(count == 0) {
+	if(count === 0) {
 		return <>
 			<Hobbies/>
 			<br/>
@@ -214,7 +214,9 @@ function AandHSwitch() {
 			}
 		}	
 	}
+	return <>
 	<button onClick={()=>{setCount(count + 1)}}>Click Me</button>
+	</>
 }
 
 function Projects(){
@@ -240,12 +242,12 @@ function Projects(){
 function Project(props){
   return <div style={{border: "1px solid black"}}>
 	<Card>
-    Name: {props.project.name}
-    	<ul>
-      		<li>Language: {props.project.languages}</li>
-      		<li>Description: {props.project.description}</li>
-	  		<li>URL: <a href={props.project.url}>Project Site</a></li>
-    	</ul> 
+    	Name: {props.project.name}
+    		<ul>
+      			<li>Language: {props.project.languages}</li>
+      			<li>Description: {props.project.description}</li>
+	  			<li>URL: <a href={props.project.url}>Project Site</a></li>
+    		</ul> 
 	</Card>
   </div>
 }
