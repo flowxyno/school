@@ -187,7 +187,7 @@ function Projects(){
     let [data, setData] = React.useState(undefined)
 
     React.useEffect(() => {
-      fetch('https://bolder-solar-gecko.glitch.me')
+      fetch('https://sharp-cotton-farm.glitch.me/')
         .then((response) => response.json())
         .then((data) => {
           setData(data)
@@ -215,6 +215,7 @@ function Project(props){
     <ul>
       <li>Language: {props.project.languages}</li>
       <li>Description: {props.project.description}</li>
+	  <li>URL: <a href={props.project.url}>Project Site</a></li>
     </ul> 
   </div>
 }
