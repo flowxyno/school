@@ -16,7 +16,7 @@ import logo from './logo.svg';
         let [loc, setLoc] = React.useState("No data yet")
 
         React.useEffect(() => {
-            fetch('http://54.245.44.139:3000') // You will get this url from the glitch preview window
+            fetch('http://35.166.184.225:3000') // You will get this url from the glitch preview window
                 .then((response) => response.json())
                 .then((data) => {
                     setFname(data[1].FirstName)
