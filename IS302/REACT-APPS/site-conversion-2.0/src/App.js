@@ -33,7 +33,6 @@ function App() {
 			  <p id="wc"><WeatherComponent/></p>
 		  </div>
 		  <div className="text" >
-			  <br/>
 			  <h1><b><u>Personal Projects:</u></b></h1>
 			  <br/>
 			  <Projects/>
@@ -130,6 +129,7 @@ function AboutMe() {
 
 function Hobbies() {
 	return <>
+	<br/>
 	<h2><b><u>Hobbies and interests:</u></b></h2>
 	<br/>
 	<ul>
@@ -190,40 +190,34 @@ function AandHSwitch() {
 	let [tog, setTog] = React.useState(false)
 	let [count,setCount] = React.useState(0)
 	
-	if(count === 0) {
+	if(tog){
 		return <>
 			<Hobbies/>
+	
 			<br/>
-			
-		</>
-	}else{ 
-		if(count == 1) {
-			return <>
-				<AboutMe/>
-				<br/>
-				
+			<br/>
+			<Button variant="contained" onClick={()=>{
+			setTog(false)
+			}}>About Me</Button>
 			</>
-		}else{
-			if(count == 2) {
-				return <>
-					<Reading/>
-				</>
-			}
-			else{
-				setCount = 0
-			}
-		}	
-	}
-	return <>
-	<button onClick={()=>{setCount(count + 1)}}>Click Me</button>
-	</>
+	  }else{
+		return<>
+		  	<AboutMe/>
+	
+			<br/>
+			<br/>
+			<Button variant='contained' onClick={()=>{
+			setTog(true)
+			}}>Hobbies</Button>
+		</>
+	  }
 }
 
 function Projects(){
     let [data, setData] = React.useState(undefined)
 
     React.useEffect(() => {
-      fetch('https://sharp-cotton-farm.glitch.me/')
+      fetch('http://52.36.204.151:3000/')
         .then((response) => response.json())
         .then((data) => {
           setData(data)
@@ -231,11 +225,11 @@ function Projects(){
     })
 
   return <> 
-    	{data && <Project project={data.projects[0]}/>}
+    	{data && <Project project={data[0]}/>}
 	<br/>
-    	{data && <Project project={data.projects[1]}/>}
+    	{data && <Project project={data[1]}/>}
 	<br/>
-    	{data && <Project project={data.projects[2]}/>}
+		{data && <Project project={data[2]}/>}
   </>
 }
 

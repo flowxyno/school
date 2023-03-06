@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--
+        CIS Web Dev 1 - Quarter Project - V4
+        Author: Tracy Harvey
+        Date:  06/15/20
+   
+        Filename: upcoming.html
+        -->
+        <meta charset="UTF-8" />
+        <title>Project: Read (Current and Future Releases)</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="styleReset.css" rel="stylesheet" />
+        <link href="styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header id="head">
+            <img src="project_read_header.jpg" alt="Project: Read" />
+            <nav>
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="favorites.html">Favorite Reads</a></li>
+                  <li><a href="upcoming.html">Upcoming Releases</a></li>
+                  <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </header>
+        <H1 id="top">Upcoming Releases</H1>
+        <!-- M6LO3 Demonstrate how to create a table (HTML, explain table's purpose): A Tables Purpose is the display primarily text data in a cell format to line up a subject (like my series name) and other data categories like author and release date --> 
+        <br>
+        <table id="releases">
+            <caption>Current and Future Releases</caption>
+            <colgroup>
+               <col id="fstColumn" />
+               <!-- •	M6LO4 Demonstrate how to span multiple rows or multiple columns in a table (HTML): The span here in my class setting alows for CSS commands to be applied to 3 columns as the same time instead of individually -->
+               <col class="infoColumns" span="3" />
+            </colgroup>
+            <thead>
+               <tr>
+                 <th>Series Name</th>
+                 <th>Author</th>
+                 <th>Book Name</th>
+                 <th>Release Date for Next Book</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr>
+                 <th>The Hunger Games</th>
+                 <td>Suzanne Collins</td>
+                 <td>The Ballad of Songbirds and Snakes</td>
+                 <td>May 19, 2020</td>
+               </tr>
+               <tr>
+                 <th>Dirk Pitt Adventures</th>
+                 <td>Clive Cussler</td>
+                 <td>Celtic Empire</td>
+                 <td>March 19, 2019</td>
+               </tr>
+               <tr>
+                 <th>The Fargo Adventures</th>
+                 <td>Clive Cussler</td>
+                 <td>Wrath of Poseidon</td>
+                 <td>May 26, 2020</td>
+               </tr>
+               <tr>
+                 <th>The Isaac Bell Novels</th>
+                 <td>Clive Cussler</td>
+                 <td>The Saboteurs</td>
+                 <td>Feburary 2021</td>
+               </tr>
+               <tr>
+                 <th>The NUMA Files</th>
+                 <td>Clive Cussler</td>
+                 <td>Journey of the Pharaohs</td>
+                 <td>March 3, 2020</td>
+               </tr>
+               <tr>
+                <th>The Oregon Files</th>
+                <td>Clive Cussler</td>
+                <td>Marauder</td>
+                <td>October 2020</td>
+              </tr>
+              <tr>
+                <th>The Dresden Files</th>
+                <td>Jim Butcher</td>
+                <td>Peace Talks</td>
+                <td>July 14, 2020</td>
+              </tr>
+              <tr>
+                <th>Expeditionary Force</th>
+                <td>Craig Alanson</td>
+                <td>Critical Mass</td>
+                <td>August 2020</td>
+              </tr>
+              <tr>
+                <th>Mavericks</th>
+                <td>Craig Alanson</td>
+                <td>FreeFall</td>
+                <td>June 2, 2020</td>
+              </tr>
+             </tbody>
+          </table>
+
+        <footer>
+            This is an example of a footer. Click here to return to the <a href="#head">top</a> of the page
+        </footer> 
+    </body>
+</html>

@@ -1,0 +1,408 @@
+@charset "utf-8";
+
+/*
+   CIS 155 - Web Dev 1 - Quarter Project - V3 Style Sheet
+   Author: Tracy Harvey
+   Date:  05/29/20
+   
+   Filename: styles.css
+
+   Colors that are marked in any kind of rgb or hsl were generated from the site:
+     https://rgbcolorcode.com/color/660000
+*/
+
+/* M3LO8A Demonstrate absolute positioning (CSS, note use in your CSS and describe what its impact is on the HTML): I did not find a place to impliment absolute positioning in my page the demonstrate learning absolute positioning is used to place an object at 
+specific coordinates in your page space by asigning a value for the edges. */
+
+/* Structural Styles */
+html {
+    height: 100%;
+    background-color: black; 
+    /* M3LO9 Demonstrate fixed, static, or inherited positioning (CSS, note explicit use of one of the three in your CSS and what the impact is on the HTML) : I used fixed positioning on my background image, it eliminates the scrolling effect of the background
+    instead it makes your webpage look like it is scrolling on the background */
+    /* background image courtesy of bestdrumwrap.com */
+    /* M4LO2 Demonstrate the use of background images (CSS) */
+    background-image: url("mahagonyFade.jpg");
+    background-attachment: fixed;
+}
+
+header, ul, nav, li, a {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    background-color: rgb(102, 0, 0);
+    color: rgb(227, 226, 202);
+    color: hsl(58, 31%, 84%);
+}
+header > img {
+    /*M3LO2 Demonstrate floating elements (CSS, note where you have specified a floating element and what its impact is): This floats the header image to the left allowing it to display to the left of my navigation menu which is also floated*/
+    display: flex;
+    float: left;
+    width: 70%;
+    height: 100%;
+}
+/* M3LO3 Demonstrate a clearing floats (CSS, note where you have used a clear and what its impact is): Allows the container which now sees it's self as empty (due to floating all of its contents) to expand to cover the floated content*/ 
+#head::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+body {
+    background-color: tan;
+    color: black;
+    margin: auto auto;
+    min-width: 320px;
+    max-width: 1280px;
+}
+
+footer {
+    background-color: rgb(207, 109, 52);
+    color: rgb(227, 226, 202);
+    color: hsl(58, 31%, 84%);
+    margin-top: 1%;
+}
+
+a[href] {
+    font-style: italic;
+}
+
+
+/* Navigation Styles */
+nav {    
+    float: left;
+    width: 30%;
+}
+nav > ul {
+    list-style: none;
+    margin-right: 4%;
+    margin-left: -4%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+nav > ul > li {
+    display: block;
+    padding: 10%;
+    width: auto;
+    /* M3LO11 Demonstrate -prefix- style browser extensions use in CSS (CSS note the use in your CSS and what the purpose is): the -webkit is is a rederer for apple safari and google chrome, and the -moz is for firefox. the code gives different browsers the "tools"
+    they need in order to render what we are coding correctly*/
+    /* •	M4LO4 Demonstrate the use of gradients (CSS)*/
+    background: rgb(102,0,0);
+    background: -moz-linear-gradient(left, rgb(102,0,0) 0%, rgb(227,226,202) 50%, rgb(102,0,0) 100%);
+    background: -webkit-linear-gradient(left, rgb(102,0,0) 0%, rgb(227,226,202) 50%, rgb(102,0,0) 100%);
+    background: linear-gradient(to right, rgb(102,0,0) 0%, tan 50%, rgb(102,0,0) 100%);
+    text-align: center;
+    
+}
+header > nav > a {
+    display: block;
+    width: 100%;
+}
+header > nav a:link, nav:visited {
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+
+header > nav a:hover, nav a:active {
+    color: rgb(227, 226, 202);
+    color: hsl(58, 31%, 84%);
+    background-color: rgb(102, 0, 0);
+}
+
+
+/* sec styles */
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 2em;
+}
+
+article {
+    display: block;
+    background-color: tan;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+article > h2 {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+article > p {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+/*•	M8LO12 Demonstrate how to format media with CSS: As I only have video in one place this CSS denotes placement and display of the embedded video player realative to the rest of the article */
+#mainArt > video {
+    float: left;
+    display: flex;
+    /* M4LO6 Demonstrate the use of opacity/transparency for images (see 4.2) (CSS) */
+    /*opacity: 0.7;*/
+    margin-right: 2%;
+    margin-left: 2%;
+}
+
+#imageArt > img {
+    float: left;
+    margin-right: 2%;
+    margin-left: 2%;
+    width: 200px;
+    height: 324px;
+}   
+
+#aboutArt > figure > img {
+    display: block;
+    float: left;
+    width: 400px;
+    height: 600px;
+    margin-right: 2%;
+    margin-left: 2%;
+    /* M4LO8 Demonstrate the use of transformations for 2D or 3D images (CSS, note one of these two in your CSS and explain its impact on the HTML): I used 2D transformation, and used it to move my image to the left to give space between my ordered list and the image with out effecting the actual layout of the other elements on the page. */
+    transform: translateX(-8%);
+}
+
+#aboutArt > figure >figure {
+    float: left;
+}
+
+#aboutArt {
+    content: "";
+    display: table;
+    clear: both;
+    margin: 0 auto;
+}
+
+#bs {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#pr {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#info {
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    text-align: center;
+}
+#info_welcome {
+    text-align: center;
+}
+
+
+/* List Styles */
+ul {
+
+}
+ol {
+    display: block;
+}
+/* M3LO8B Demonstrate relative positioning (CSS, note use in your CSS and describe what its impact is on the HTML) : in this case it moves my orderd list right 2% of the avaliable space alocated to the article section that it is in */
+#mainArt > ol {
+    position: relative;
+    left: 2%;
+}
+
+#aboutArt > ol {
+    position: relative;
+    left: 2%;
+}
+
+ol.log_data {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+}
+
+/* Table Styles */
+
+/* M6LO7 Demonstrate how to format a table with CSS (CSS): The CSS commands given here control border and font sizes, background, font, and border colors and column width */
+table {
+    background: linear-gradient(to bottom, rgb(102,0,0), black);
+    border: 3px solid gray;
+}
+
+table > caption {
+    font-size: 1.5em;
+}
+  
+th, td {
+    border: 3px solid gray;
+    line-height: 1.5em;
+    padding: 8px;
+}
+  
+th {
+    background: black;
+    color: whitesmoke;
+    font-weight: normal;
+}
+  
+td {
+    color: tan;
+    font-size: 1em;
+    vertical-align: top;
+}
+
+col#fstColumn {
+    width: 24%;
+  }
+  
+  col.infoColumns {
+    width: 19%;
+  }
+
+/* Table and Div Styles */
+div.genreTable {
+    border: 2px;
+    width: 167px;
+    border-style: solid;
+    border-color: black;
+    border-collapse: collapse;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+div.genreTableCell {
+    display: inline-block;
+    border: 3px;
+    border-style: solid;
+    border-color: black;
+    
+}
+/* M3LO6 Demonstrate formatting a grid (CSS, note the CSS rules that do this and what their impact is on the HTML; this can be old div-class based grids, or new CSS3 grids) the commands in .bookColumn float the column left and set the width to 50% of the avaliable space. commands in the .bookRow clear the float to control container collapse, give the div a border, set the top and bottom margin and width sizes and centers the div by margin*/
+.bookColumn {
+    float: left;
+    width: 50%;
+    height: 665px;
+    /* M3LO10 Demonstrate an overflow setting (CSS, note explicit use of an overflow setting in your CSS and what the impact is on the HTML): I used overflow auto, it will put a scroll bar on any displayable content that goes past the containers max height */
+    overflow: auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.bookRow {
+    content: "";
+    /* M5LO5 Demonstrate the use of flexboxes on a web page (CSS document where you use flexboxes; explain their impact on the page's layout): Flex box used on the book review sections to replace the old table display */
+    display: flex;
+    /* M5LO7 Demonstrate use of properties of flexbox containers (CSS, document what flexbox container properties you use and their impacts, for one CSS selector using them): The wrap allows me to keep the two colmn format that I want while using a flex box */
+    flex-wrap: wrap;
+    clear: both;
+    border-style: outset;
+    border-color: rgb(102, 0, 0);
+    border-width: 5px;
+    margin: 0 auto;
+    /* M4LO5 Demonstrate the use of text or box shadowing (CSS, note one of these two in your CSS and explain its impact on the HTML): I used box shadowing it has the effect of giving the html document some depth like a light is shining on it from above at an angle. */
+    -webkit-box-shadow: 9px 9px 13px 5px rgba(0,0,0,0.87);
+    box-shadow: 9px 9px 13px 5px rgba(0, 0, 0, 0.87);
+    /* M4LO3 Demonstrate the use of rounded corners for borders (CSS) */
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+    width: 90%;
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+.bookSub {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.bookSubInt {
+    content: "";
+    display: flex;
+    justify-content: center;
+    border-style: outset;
+    border-color: rgb(102, 0, 0);
+    border-width: 5px;
+    margin: 0 auto;
+    -webkit-box-shadow: 9px 9px 13px 5px rgba(0,0,0,0.87);
+    box-shadow: 9px 9px 13px 5px rgba(0, 0, 0, 0.87);
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+    width: 90%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+.submitButton {
+    background-color: tan;
+    color: black;
+    position: relative;
+    /* M8LO10 Demonstrate a CSS animation or transition: this moves the submit button to the right from its start point and replaces the default background and text color */
+    animation-name: moveButton;
+    animation-duration: 5s;
+    animation-delay: 3s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+/* FORM STYLES */
+/* M7LO11 Demonstrate how to format a form with CSS: this controls the spacing and location of text and boxes with in the form */
+label {
+    display: block;
+    float: left;
+    clear: left;
+    margin-left: 2%;
+    padding-bottom: 1%;
+    width: 12%;
+ }
+ 
+ input, select, textarea {
+    display: block;
+    float: left;
+    margin: 5px 0px;
+    width: 18%;
+ }
+ 
+ textarea {
+    height: 100px;
+ }
+ 
+ form p {
+    clear: left;
+    text-align: left;
+    padding-top: 2%;
+    padding-left: 2%;
+ }
+
+ /* ANIMATION STYLES */
+/* M8LO10 Demonstrate a CSS animation or transition: this moves the submit button to the right from its start point and replaces the default background and text color */
+@keyframes moveButton {
+    from {left: 0px;}
+    to {left: 50px; background-color: rgb(102, 0, 0); color: tan;}
+}
+
+/* MOBILE DEVICE STYLES */
+@media only screen and (max-width: 480px) {
+/* •	M5LO3 Use media queries to format a page differently for phones vs. PCs. (CSS, note where these are in your CSS and describe the overall impact they have on the site): You use media queries to adapt elements to fit properly in the brower and change the users experience */
+    div.bookRow {
+        text-align: center;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .bookColumn {
+        margin-left: 1%;
+        margin-right: 1%;
+        width: 98%;
+    }
+}

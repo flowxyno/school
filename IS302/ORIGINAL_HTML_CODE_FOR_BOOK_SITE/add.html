@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--
+        CIS Web Dev 1 - Quarter Project - V4
+        Author: Tracy Harvey
+        Date:  06/15/20
+   
+        Filename: add.html
+        -->
+
+        <meta charset="UTF-8">
+        <title>Project: Read</title> 
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="styleReset.css" rel="stylesheet" />
+        <link href="styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header id="head">
+            <img src="project_read_header.jpg" alt="Project: Read" />    
+            <nav class="main">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="favorites.html">Favorite Reads</a></li>
+                    <li><a href="upcoming.html">Upcoming Releases</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </header>
+        <H1 id="top">Book Submission Page</H1>
+        <article>
+            <p>Do you have a book that you think that I would like? I am always looking for new things
+               to read and adventures to go on. Please input the book information in the form below
+            </p>      
+      <form action="favorites.html" method="GET">
+      <!--M7LO5 Demonstrate the use of a text box in a form-->
+      <label for="fnBox">First Name</label>
+      <input name="firstName" id="fnBox" type="text" required />
+
+      <label for="lnBox">Last Name</label>
+      <input name="lastName" id="lnBox" type="text" required />
+
+      <label for="bookTitle">Book Title</label>
+      <input name="bookTitle" id="bookTitle" type="text" required />
+      
+      <!--M7LO8 Demonstrate the use of a selection list in a form-->
+      <label for="genre">Genre</label>
+      <input name="genre" id="genre" type="text" list="genreList" required />
+      <datalist id="genreList">
+        <option value="Adventure">
+        <option value="Fantasy">
+        <option value="Historical">
+        <option value="Horror">
+        <option value="Mystery">
+        <option value="Romance">
+        <option value="Science Fiction">
+      </datalist>
+
+      <!--M7LO9 Demonstrate the use of a text area in a form-->
+      <label for="synopBox">Book Synopsis</label>
+      <textarea name="synop" id="synopBox" required></textarea>
+      
+      <p>Is it kid friendly?</p>
+      <!--M7LO7 Demonstrate the use of radio buttons in a form-->
+      <label for="yes">Yes</label>
+      <input type="radio" id="yes" name="y/n" value="yes">
+      <label for="no">No</label>
+      <input type="radio" id="no" name="y/n" value="no">
+
+      <br>
+
+      <p>Target age Range?</p>
+      <!--M7LO6 Demonstrate the use of check boxes in a form-->
+      <Label for="age1">8-12</Label>
+      <input type="checkbox" id="age1" name="age1" value="8-12">
+      <label for="age2">13-17</label>
+      <input type="checkbox" id="age2" name="age2" value="13-17">
+      <label for="age3">18+</label>
+      <input type="checkbox" id="age3" name="age3" value="18+">
+
+      <p>If you would like me to leave you a comment on your book submission please enter your
+          e-mail address below
+      </p>
+      <label for="mailBox">E-mail</label>
+      <input name="email" id="mailBox" type="email" />
+
+      <!--M7LO10 Demonstrate the use of a submit button in a form-->
+      <p><input type="submit" value="continue" /></p>
+       </form>
+        </article>
+    <footer>
+        This is an example of a footer. Click here to return to the <a href="#head">top</a> of the page
+    </footer> 
+    </body>
+</html>
