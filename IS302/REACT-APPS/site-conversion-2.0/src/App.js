@@ -217,7 +217,7 @@ function Projects(){
     let [data, setData] = React.useState(undefined)
 
     React.useEffect(() => {
-      fetch('http://52.36.204.151:3000/')
+      fetch('http://18.237.100.160:3000/')
         .then((response) => response.json())
         .then((data) => {
           setData(data)
