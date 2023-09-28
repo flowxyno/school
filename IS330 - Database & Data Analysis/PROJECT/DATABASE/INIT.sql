@@ -11,25 +11,27 @@ CREATE TABLE users (
    passwordHash VARCHAR(100)		
 );		
 
-CREATE TABLE genres (		
-   genreID INT PRIMARY KEY,		
-   genreName VARCHAR(50)		
+CREATE TABLE tags (		
+   tagID INT PRIMARY KEY,		
+   tagName VARCHAR(50)		
 );		
 
 CREATE TABLE series (
    seriesID INT PRIMARY KEY,
    seriesName VARCHAR(100),
+   seriesTagID INT,
    synop TEXT,
    totalEpisodes INT,
-   coverArt VARCHAR(255)
+   coverArt VARCHAR(255),
+   FOREIGN KEY (seriesTagID) REFERENCES seriesTags(seriesTagID)
 );
 
-CREATE TABLE seriesGenre (
+CREATE TABLE seriesTags (
    seriesID INT, 
-   genreID INT, 
-   PRIMARY KEY (seriesID, genreID),
+   tagID INT, 
+   seriesTagID INT PRIMARY KEY,
    FOREIGN KEY (seriesID) REFERENCES series(seriesID),
-   FOREIGN KEY (genreID) REFERENCES genres(genreID)
+   FOREIGN KEY (genreID) REFERENCES tags(tagID)
 );
 
 CREATE TABLE episodes (
@@ -38,7 +40,6 @@ CREATE TABLE episodes (
    episodeNumber INT,
    episodeTitle VARCHAR(100),
    episodeSynop TEXT,
-   lastWatched BOOLEAN default false,
    FOREIGN KEY (seriesID) REFERENCES series(seriesID)
 );
 
@@ -47,6 +48,7 @@ CREATE TABLE seriesTrackers (
    userID INT,
    seriesID INT,
    episodeID INT,
+   lastWatched DATETIME,
    FOREIGN KEY (userID) REFERENCES users(userID),
    FOREIGN KEY (seriesID) REFERENCES series(seriesID), 
    FOREIGN KEY (episodeID) REFERENCES episodes(episodeID)
