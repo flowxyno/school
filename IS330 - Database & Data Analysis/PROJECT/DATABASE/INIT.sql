@@ -4,7 +4,7 @@ CREATE DATABASE IF NOT EXISTS leftoff;
 USE leftoff;
 
 CREATE TABLE users (		
-   userID INT PRIMARY KEY,		
+   userID INT PRIMARY KEY auto_increment,		
    firstName VARCHAR(50),		
    lastName VARCHAR(50),		
    userName VARCHAR(50), 		
@@ -12,30 +12,30 @@ CREATE TABLE users (
 );		
 
 CREATE TABLE tags (		
-   tagID INT PRIMARY KEY,		
+   tagID INT PRIMARY KEY auto_increment,		
    tagName VARCHAR(50)		
 );		
 
 CREATE TABLE series (
-   seriesID INT PRIMARY KEY,
+   seriesID INT PRIMARY KEY auto_increment,
    seriesName VARCHAR(100),
    seriesTagID INT,
    synop TEXT,
    totalEpisodes INT,
-   coverArt VARCHAR(255),
-   FOREIGN KEY (seriesTagID) REFERENCES seriesTags(seriesTagID)
+   coverArt VARCHAR(255)
+   -- FOREIGN KEY (seriesTagID) REFERENCES seriesTags(seriesTagID)
 );
 
 CREATE TABLE seriesTags (
+   seriesTagID INT PRIMARY KEY auto_increment,
    seriesID INT, 
    tagID INT, 
-   seriesTagID INT PRIMARY KEY,
    FOREIGN KEY (seriesID) REFERENCES series(seriesID),
-   FOREIGN KEY (genreID) REFERENCES tags(tagID)
+   FOREIGN KEY (tagID) REFERENCES tags(tagID)
 );
 
 CREATE TABLE episodes (
-   episodeID INT PRIMARY KEY,
+   episodeID INT PRIMARY KEY auto_increment,
    seriesID INT,
    episodeNumber INT,
    episodeTitle VARCHAR(100),
@@ -44,7 +44,7 @@ CREATE TABLE episodes (
 );
 
 CREATE TABLE seriesTrackers (
-   trackerID INT PRIMARY KEY,
+   trackerID INT PRIMARY KEY auto_increment,
    userID INT,
    seriesID INT,
    episodeID INT,
