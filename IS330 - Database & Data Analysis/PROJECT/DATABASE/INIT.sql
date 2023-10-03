@@ -21,7 +21,6 @@ CREATE TABLE series (
    seriesName VARCHAR(100),
    seriesTagID INT,
    synop TEXT,
-   totalEpisodes INT,
    coverArt VARCHAR(255)
    -- FOREIGN KEY (seriesTagID) REFERENCES seriesTags(seriesTagID)
 );
