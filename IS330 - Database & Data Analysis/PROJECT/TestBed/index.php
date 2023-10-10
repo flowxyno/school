@@ -12,8 +12,8 @@
 
    <label for="user">User: </label>
    <select>
-    <?php 
-        include "db_connection.php";
+    <?php
+        include "db_connection.php"; //this is where $conn comes from
 
         $result = $conn->prepare("SELECT userID, firstName,lastName FROM users");
 
@@ -30,7 +30,7 @@
     <!--<form>
         <label for="user">User:</label>
         <select name="user" id="user">
-            INSERT OPENING PHP TAG HERE!!
+            Place PHP start tag here
 
             // Connection to the database connection file
             include "db_connection.php";
