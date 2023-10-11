@@ -11,6 +11,7 @@
     <form action="display_series.php" method="POST">
         <label for="user">User:</label>
         <select name="user" id="user">
+            <option value="">Select a User</option>
             <?php
 
             // Connection to the database connection file
