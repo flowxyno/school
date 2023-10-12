@@ -13,6 +13,8 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $selectedUserID = $_POST['user'];
 
+       // echo "<h1>Series Trackers for </h1>"
+
         // Fetch series trackers for the selected user
         $query = "SELECT series.seriesName, episodes.episodeTitle, seriesTrackers.lastWatched
                   FROM seriesTrackers
