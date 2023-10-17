@@ -8,7 +8,7 @@ CREATE TABLE users (
    firstName VARCHAR(50),		
    lastName VARCHAR(50),		
    userName VARCHAR(50), 		
-   passwordHash VARCHAR(100)		
+   passwordHash VARCHAR(255)		
 );		
 
 CREATE TABLE tags (		
