@@ -1,33 +1,50 @@
-<!DOCTYPE html>
-<html>
+<?php
+// Start session management and include necessary functions
+session_start();
+require_once('model/db_connection.php');
+require_once('model/admin_db.php');
 
-<head>
-    <Title>User Selection</Title>
-</head>
+// Get the action to perform
+$action = filter_input(INPUT_POST, 'action');
+if ($action == NULL) {
+    $action = filter_input(INPUT_GET, 'action');
+    if ($action == NULL) {
+        $action = 'show_admin_menu';
+    }
+}
 
-<body>
-    <h1>Select a User</h1>
-   
-    <form action="display_series.php" method="POST">
-        <label for="user">User:</label>
-        <select name="user" id="user">
-            <option value="">Select a User</option>
-            <?php
-            // Connection to the database connection file
-            include "db_connection.php";
+// If the user isn't logged in, force the user to login
+if (!isset($_SESSION['is_valid_admin'])) {
+    $action = 'login';
+}
 
-            // Fetching users from the database
-            $quest = "SELECT userID, firstName, lastName FROM users";
-            $result = $conn->query($quest);
-
-                //Loading the dropdown from the database
-                while ($row = $result->fetch()) {
-                    echo "<option value='{$row['userID']}'>{$row['firstName']} {$row['lastName']}</option>";
-                }
-            ?>
-        </select>
-        <input type="submit" value="Show Series Trackers">
-    </form>
-</body>
-
-</html>
+// Perform the specified action
+switch($action) {
+    case 'login':
+        $email = filter_input(INPUT_POST, 'email');
+        $password = filter_input(INPUT_POST, 'password');
+        if (is_valid_admin_login($email, $password)) {
+            $_SESSION['is_valid_admin'] = true;
+            include('view/admin_menu.php');
+        } else {
+            $login_message = 'You must login to view this page.';
+            include('view/login.php');
+        }
+        break;
+    case 'show_admin_menu':
+        include('view/admin_menu.php');
+        break;
+    case 'show_product_manager':
+        include('view/product_manager.php');
+        break;
+    case 'show_order_manager':
+        include('view/order_manager.php');
+        break;
+    case 'logout':
+        $_SESSION = array();   // Clear all session data from memory
+        session_destroy();     // Clean up the session ID
+        $login_message = 'You have been logged out.';
+        include('view/login.php');
+        break;
+}
+?>
