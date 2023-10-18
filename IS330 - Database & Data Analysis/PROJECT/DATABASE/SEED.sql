@@ -8,7 +8,7 @@ INSERT INTO users (firstName, lastName, userName, passwordHash)
 		('Tracy', 'Harvey', 'user1', 'hashedpassword1'),
         ('Starr', 'Harvey', 'user2', 'hashedpassword2'),
         ('Kelly', 'Tanner', 'user3', 'hashedpassword3'),
-        ('John', 'Brown', 'user4', 'hashedpassword4')
+        ('Scooby', 'Doo', 'user4', 'hashedpassword4')
 ;
     
 -- inserting data into the tags table

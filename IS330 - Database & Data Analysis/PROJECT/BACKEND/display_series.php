@@ -4,7 +4,6 @@
     <title>Series Trackers</title>
 </head>
 <body>
-    <h1>Series Trackers for Selected User</h1>
 
     <?php
     // Include the database connection code
@@ -13,7 +12,21 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $selectedUserID = $_POST['user'];
 
-       echo "<h1>Series Trackers for $selectedUserID</h1>";
+        //queries that DB  for all of the column data in reference to the passed in userID
+        $usernamequery = "SELECT * FROM users
+        WHERE userID= $selectedUserID";
+
+        $stmt = $conn->prepare($usernamequery);
+
+        $stmt->execute();
+
+        //Pulls the needed data out of the retrieved query data
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $username = $row['firstName'];
+
+        //displays the querried data in the location that you wanted
+        echo "<h1>Series Trackers for $username</h1>";
 
         // Fetch series trackers for the selected user
         $query = "SELECT series.seriesName, episodes.episodeTitle, seriesTrackers.lastWatched

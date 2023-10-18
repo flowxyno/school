@@ -13,7 +13,6 @@
         <select name="user" id="user">
             <option value="">Select a User</option>
             <?php
-
             // Connection to the database connection file
             include "db_connection.php";
 
@@ -25,7 +24,6 @@
                 while ($row = $result->fetch()) {
                     echo "<option value='{$row['userID']}'>{$row['firstName']} {$row['lastName']}</option>";
                 }
-
             ?>
         </select>
         <input type="submit" value="Show Series Trackers">
