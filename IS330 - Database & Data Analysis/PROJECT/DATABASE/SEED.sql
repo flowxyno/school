@@ -5,10 +5,10 @@ DELETE FROM users;
 ALTER TABLE users auto_increment = 1;
 INSERT INTO users (firstName, lastName, userName, passwordHash)
 	VALUES
-		('Tracy', 'Harvey', 'user1', 'hashedpassword1'),
-        ('Starr', 'Harvey', 'user2', 'hashedpassword2'),
-        ('Kelly', 'Tanner', 'user3', 'hashedpassword3'),
-        ('Scooby', 'Doo', 'user4', 'hashedpassword4')
+		('Tracy', 'Harvey', 'tharvey', '$2y$10$HwZ.yTiX5z8wII5YBbPzZefUC9lVMSaPIyrMZVR4JD2Ln8hPqonzW'),
+        ('Starr', 'Harvey', 'sharvey', '$2y$10$HwZ.yTiX5z8wII5YBbPzZefUC9lVMSaPIyrMZVR4JD2Ln8hPqonzW'),
+        ('Kelly', 'Tanner', 'ktanner', '$2y$10$HwZ.yTiX5z8wII5YBbPzZefUC9lVMSaPIyrMZVR4JD2Ln8hPqonzW'),
+        ('Scooby', 'Doo', 'sdoo', '$2y$10$HwZ.yTiX5z8wII5YBbPzZefUC9lVMSaPIyrMZVR4JD2Ln8hPqonzW')
 ;
     
 -- inserting data into the tags table

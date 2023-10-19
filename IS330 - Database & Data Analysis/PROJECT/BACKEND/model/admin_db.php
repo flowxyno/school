@@ -11,18 +11,26 @@ function add_admin($email, $password) {
     $statement->closeCursor();
 }
 
-function is_valid_admin_login($email, $password) {
+function is_valid_admin_login($username, $password) {
     global $db;
-   /* $hash = password_hash($password, PASSWORD_DEFAULT);
+    
+    /*$hash = password_hash($password, PASSWORD_DEFAULT);
     echo $hash; */
-    $query = 'SELECT password FROM administrators
-              WHERE emailAddress = :email';
+
+    $query = 'SELECT passwordHash FROM users
+              WHERE userName = :username';
     $statement = $db->prepare($query);
-    $statement->bindValue(':email', $email);
+    $statement->bindValue(':username', $username);
     $statement->execute();
     $row = $statement->fetch();
     $statement->closeCursor();
-    $hash = $row['password'];
+
+    if($row === False)
+    {
+        return False;
+    }
+
+    $hash = $row['passwordHash'];
     return password_verify($password, $hash);
 }
 ?>

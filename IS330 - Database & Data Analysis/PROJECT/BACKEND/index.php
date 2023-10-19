@@ -1,7 +1,7 @@
 <?php
 // Start session management and include necessary functions
 session_start();
-require_once('model/db_connection.php');
+require_once('model/database.php');
 require_once('model/admin_db.php');
 
 // Get the action to perform
@@ -21,9 +21,9 @@ if (!isset($_SESSION['is_valid_admin'])) {
 // Perform the specified action
 switch($action) {
     case 'login':
-        $email = filter_input(INPUT_POST, 'email');
+        $username = filter_input(INPUT_POST, 'username');
         $password = filter_input(INPUT_POST, 'password');
-        if (is_valid_admin_login($email, $password)) {
+        if (is_valid_admin_login($username, $password)) {
             $_SESSION['is_valid_admin'] = true;
             include('view/admin_menu.php');
         } else {

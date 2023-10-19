@@ -5,12 +5,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>My Guitar Shop</title>
+        <title>Where did I leave off!!</title>
         <link rel="stylesheet" type="text/css" href="main.css"/>
     </head>
     <body>
         <header>
-            <h1>My Guitar Shop</h1>
+            <h1>Where did I leave off!!</h1>
         </header>
         <main>
             <h1>Order Manager</h1>
