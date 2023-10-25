@@ -25,14 +25,14 @@ switch($action) {
         $password = filter_input(INPUT_POST, 'password');
         if (is_valid_admin_login($username, $password)) {
             $_SESSION['is_valid_admin'] = true;
-            include('view/admin_menu.php');
+            include('view/main_menu.php');
         } else {
             $login_message = 'You must login to view this page.';
             include('view/login.php');
         }
         break;
-    case 'show_admin_menu':
-        include('view/admin_menu.php');
+    case 'show_main_menu':
+        include('view/main_menu.php');
         break;
     case 'show_product_manager':
         include('view/product_manager.php');

@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Where did I leave off!!</title>
+        <title>Left off - Main Menu</title>
         <link rel="stylesheet" type="text/css" href="main.css"/>
     </head>
     <body>
@@ -13,10 +13,11 @@
             <h1>Where did I leave off!!</h1>
         </header>
         <main>
-            <h1>Admin Menu</h1>
-            <p><a href="index.php?action=show_product_manager">Product Manager</a></p>
-            <p><a href="index.php?action=show_order_manager">Order Manager</a></p>
-            <p><a href="index.php?action=logout">Logout</a></p>
+            <?php 
+                include 'util/nav_menu.php';
+            ?>
+
+            <p>This is the primary Menu page where you end up once you log in.</p>
         </main>
     </body>
 </html>

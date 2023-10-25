@@ -13,10 +13,9 @@
             <h1>Where did I leave off!!</h1>
         </header>
         <main>
-            <h1>Order Manager</h1>
-            <p>Under construction!</p>
-            <p><a href="index.php?action=show_admin_menu">Admin Menu</a></p>
-            <p><a href="index.php?action=logout">Logout</a></p>
+            <?php 
+            include 'util/nav_menu.php';
+            ?>
         </main>
     </body>
 </html>
