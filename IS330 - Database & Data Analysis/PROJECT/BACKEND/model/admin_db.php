@@ -14,6 +14,7 @@ function add_admin($username, $password) {
 function is_valid_admin_login($username, $password) {
     global $db;
     
+    // Note: Remove this before security review
     /* $hash = password_hash($password, PASSWORD_DEFAULT);
     echo $hash; */ 
 

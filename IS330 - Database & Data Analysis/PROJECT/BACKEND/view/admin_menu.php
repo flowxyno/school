@@ -13,11 +13,10 @@
             <h1>Where did I leave off!!</h1>
         </header>
         <main>
-            <?php 
-            include 'util/nav_menu.php';
-            ?>
-
-            can you see this?
+            <h1>Admin Menu</h1>
+            <p><a href="index.php?action=show_product_manager">Product Manager</a></p>
+            <p><a href="index.php?action=show_order_manager">Order Manager</a></p>
+            <p><a href="index.php?action=logout">Logout</a></p>
         </main>
     </body>
 </html>

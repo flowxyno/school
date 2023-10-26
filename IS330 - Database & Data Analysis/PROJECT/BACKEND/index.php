@@ -34,6 +34,9 @@ switch($action) {
     case 'show_main_menu':
         include('view/main_menu.php');
         break;
+    case 'show_new_user':
+        include('view/new_user.php');
+        break;
     case 'show_product_manager':
         include('view/product_manager.php');
         break;

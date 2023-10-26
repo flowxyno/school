@@ -94,3 +94,8 @@ form {
 input.text {
     width: 15em;
 }
+
+#new_user_form {
+    margin: 1em 0;
+}
+

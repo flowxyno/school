@@ -21,7 +21,7 @@
     </head>
     <body>
         <header>
-            <h1>Left off: Insert New Series</h1>
+            <h1>Where did I leave off!!</h1>
         </header>
         <main>
             <div class="container"> 
@@ -31,13 +31,28 @@
                     ?>
                 </div>
                 <div class="form-container">
-                    <h1>New Series</h1>
+                    <h1>New User</h1>
 
                     <!-- change the action value to something other than login -->
-                    <form action="." method="post" id="new_series_form" class="aligned">
+                    <form action="." method="post" id="new_user_form" class="aligned">
                         <input type="hidden" name="action" value="login">
 
-                        New Series form goes here
+                        <label>First Name:</label>
+                        <input type="text" class="text" name="fname">
+                        <br>
+
+                        <label>Last Name:</label>
+                        <input type="text" class="text" name="lname">
+                        <br>
+
+                        <label>Username:</label>
+                        <input type="text" class="text" name="username">
+                        <br>
+
+                        <label>Password:</label>
+                        <input type="password" class="text" name="password">
+                        <br>
+                        <br>
 
                         <label>&nbsp;</label>
                         <input type="submit" value="Submit">
@@ -45,6 +60,8 @@
                 </div>
             </div>
             <br>
+            <!-- Comment this back in when you figure out the message           
+            <p><?php echo $login_message; ?></p>-->
         </main>
     </body>
 </html>
