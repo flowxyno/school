@@ -37,8 +37,8 @@ switch($action) {
     case 'show_new_user':
         include('view/new_user.php');
         break;
-    case 'show_product_manager':
-        include('view/product_manager.php');
+    case 'show_new_series':
+        include('view/new_series.php');
         break;
     case 'show_order_manager':
         include('view/order_manager.php');
