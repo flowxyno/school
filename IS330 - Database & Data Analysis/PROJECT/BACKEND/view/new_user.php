@@ -24,6 +24,7 @@
                 echo "User add failed";
             }
         }
+   }
 
 ?>
 <!DOCTYPE html>
