@@ -3,7 +3,7 @@
     require_once('util/valid_admin.php');  // require a valid admin user
     require_once('model/admin_db.php'); // require to pass data to the add_admin function
 
-   /* if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($_POST['action'] === 'add_admin') {
             // Capture form data
             $fname = $_POST['fname'];
@@ -23,7 +23,7 @@
                 // Handle the case where adding the admin user failed
                 echo "User add failed";
             }
-        } */
+        }
 
 ?>
 <!DOCTYPE html>
