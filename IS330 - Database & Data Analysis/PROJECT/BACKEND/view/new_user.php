@@ -14,13 +14,13 @@
             // Call the add_admin function with the captured data
             $result = add_admin($fname, $lname, $username, $password);
     
-            // Handle the result as needed (e.g., show success message or handle errors)
             if ($result) {
                 // Admin user added successfully
-                echo "Uesr added successfully";
-                // You can redirect or display a success message here
+                // redirect or display a success message here
+                echo "User added successfully";
+                
             } else {
-                // Handle the case where adding the admin user failed
+                // Dispay failure message here
                 echo "User add failed";
             }
         }
