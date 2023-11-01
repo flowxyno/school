@@ -1,30 +1,6 @@
 <?php
     require_once('util/secure_conn.php');  // require a secure connection
     require_once('util/valid_admin.php');  // require a valid admin user
-    require_once('model/admin_db.php'); // require to pass data to the add_admin function
-
-   /* if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        if ($_POST['action'] === 'add_admin') {
-            // Capture form data
-            $fname = $_POST['fname'];
-            $lname = $_POST['lname'];
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-    
-            // Call the add_admin function with the captured data
-            $result = add_admin($fname, $lname, $username, $password);
-    
-            // Handle the result as needed (e.g., show success message or handle errors)
-            if ($result) {
-                // Admin user added successfully
-                echo "Uesr added successfully";
-                // You can redirect or display a success message here
-            } else {
-                // Handle the case where adding the admin user failed
-                echo "User add failed";
-            }
-        } */
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -58,8 +34,8 @@
                     <h1>New User</h1>
 
                     <!-- change the action value to something other than login -->
-                    <form action="admin_db.php" method="post" id="new_user_form" class="aligned">
-                        <input type="hidden" name="action" value="add_admin">
+                    <form action="." method="post" id="new_user_form" class="aligned">
+                        <input type="hidden" name="action" value="login">
 
                         <label>First Name:</label>
                         <input type="text" class="text" name="fname">
