@@ -40,8 +40,11 @@ switch($action) {
     case 'show_new_series':
         include('view/new_series.php');
         break;
-    case 'show_order_manager':
-        include('view/order_manager.php');
+    case 'show_new_episodes':
+        include('view/new_episodes.php');
+        break;
+    case 'show_series_database':
+        include('view/series_database.php');
         break;
     case 'logout':
         $_SESSION = array();   // Clear all session data from memory
