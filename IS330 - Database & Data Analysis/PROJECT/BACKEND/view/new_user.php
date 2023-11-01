@@ -58,7 +58,7 @@
                     <h1>New User</h1>
 
                     <!-- change the action value to something other than login -->
-                    <form action="admin_db.php" method="post" id="new_user_form" class="aligned">
+                    <form action="." method="post" id="new_user_form" class="aligned">
                         <input type="hidden" name="action" value="add_admin">
 
                         <label>First Name:</label>
