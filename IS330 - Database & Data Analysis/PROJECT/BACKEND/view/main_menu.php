@@ -33,7 +33,7 @@
                 <div class="form-container">
                     <h1>Main Menu</h1>
 
-                    Place holder image goes here !!
+                    Series Left off data goes here !!
                 </div>
             </div>
         </main>
