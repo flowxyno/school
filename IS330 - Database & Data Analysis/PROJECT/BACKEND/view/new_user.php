@@ -23,15 +23,8 @@
                 echo '<script>alert("User Add Failed!!");</script>';
             }
    }
-/* $message = "This is a message from PHP.";
-if ($result === true) {
-    echo '<script>alert("Pass: ' . $message . '");</script>';
-} else {
-    echo '<script>alert("Fail: ' . $message . '");</script>';
-} */
-
-
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
