@@ -7,9 +7,9 @@ function add_admin($fname, $lname, $username, $password) {
     }
 
     $hash = password_hash($password, PASSWORD_DEFAULT);
-    $query = 'INSERT INTO users (firstName, lastName, userName, passwordHash)
+    $insertuserquest = 'INSERT INTO users (firstName, lastName, userName, passwordHash)
               VALUES (:fname, :lname, :username, :password)';
-    $statement = $db->prepare($query);
+    $statement = $db->prepare($insertuserquest);
     $statement->bindValue(':fname', $fname);
     $statement->bindValue(':lname', $lname);
     $statement->bindValue(':username', $username);

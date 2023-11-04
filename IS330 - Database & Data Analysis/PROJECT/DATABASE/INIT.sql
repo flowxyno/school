@@ -19,10 +19,8 @@ CREATE TABLE tags (
 CREATE TABLE series (
    seriesID INT PRIMARY KEY auto_increment,
    seriesName VARCHAR(100),
-   seriesTagID INT,
    synop TEXT,
    coverArt VARCHAR(255)
-   -- FOREIGN KEY (seriesTagID) REFERENCES seriesTags(seriesTagID)
 );
 
 CREATE TABLE seriesTags (
