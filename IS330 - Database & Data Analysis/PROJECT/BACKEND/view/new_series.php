@@ -4,7 +4,7 @@
 
     if (isset($_POST['new_series'])) {
         // Database connection
-       // include "model/database.php";
+        include "model/database.php";
     
         // Get user inputs from the form
         $seriesName = $_POST['seriesName'];
@@ -40,10 +40,10 @@
             } else {
                 echo "Error: " . $insertSeriesTagsQuest . "<br>" . $db->error;
             }
-        //}
+        //} */
     
         // Close the database connection
-        $db->close(); */
+        $db->closeCursor(); 
     }
 ?>
 
@@ -78,7 +78,7 @@
                 <div class="form-container">
                     <h1>New Series</h1>
 
-                    <!-- change the action value to something other than login -->
+                    <!-- Form to handle the users input for the series -->
                     <form action="." method="post" id="new_series_form" class="aligned">
                         <!--<input type="hidden" name="action" value="newSeries"> -->
 
@@ -96,19 +96,19 @@
                             <option value=""></option>
                             <?php
                             // Establish database connection
-                            //include "model/database.php";
+                            include "model/database.php";
 
                             // Retrieve tag data
                             $tagQuest = "SELECT tagID, tagName FROM tags";
                             $tagResult = $db->query($tagQuest);
 
                                 // Display tagNames as options for the dropdown menu
-                                foreach ($row = $tagResult->fetchAll(PDO::FETCH_ASSOC)) {
-                                    echo "<option value='{$row['tagID']}'>{$row['tagName']}</option>";
+                                while ($row = $tagResult->fetch()) {
+                                    echo "<option value='" . $row['tagID'] . "'>" . $row['tagName'] . "</option>";
                                 }
 
                             // Close the database connection
-                            //$db->close();
+                            $db->closeCursor();
                             ?>
                         </select><br><br>
                         <label>&nbsp;</label>
