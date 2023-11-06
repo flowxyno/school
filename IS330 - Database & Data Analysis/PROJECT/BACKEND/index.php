@@ -6,11 +6,11 @@ require_once('model/admin_db.php');
 
 // Get the action to perform
 $action = filter_input(INPUT_POST, 'action');
-echo $action;
+
 if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
     if ($action == NULL) {
-        $action = 'show_admin_menu';
+        $action = 'show_main_menu';
     }
 }
 

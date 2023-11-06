@@ -21,9 +21,8 @@
 
         $statement->execute();
     
-        //if ($db->query($insertSeriesQuest) === TRUE) {
             // Get the last inserted seriesID
-            $seriesID = $db->lastInsertId;
+            $seriesID = $db->lastInsertId();
     
             // Insert series and tag association into the 'seriesTags' table
             $insertSeriesTagsQuest = "INSERT INTO seriesTags (seriesID, tagID) VALUES (:seriesID, :tagID)";
@@ -33,17 +32,10 @@
 
             $statement->execute();
 
-            echo "sucessful";
-    
-         /*   if ($db->query($insertSeriesTagsQuest) === TRUE) {
-                echo "Series added successfully!";
-            } else {
-                echo "Error: " . $insertSeriesTagsQuest . "<br>" . $db->error;
-            }
-        //} */
+            echo '<script>alert("Series added successfully");</script>';
     
         // Close the database connection
-        $db->closeCursor(); 
+        $statement->closeCursor(); 
     }
 ?>
 
@@ -79,7 +71,7 @@
                     <h1>New Series</h1>
 
                     <!-- Form to handle the users input for the series -->
-                    <form action="." method="post" id="new_series_form" class="aligned">
+                    <form action="index.php?action=show_new_series" method="post" id="new_series_form" class="aligned">
                         <!--<input type="hidden" name="action" value="newSeries"> -->
 
                         <label for="seriesName">Series Name:</label>
@@ -108,11 +100,11 @@
                                 }
 
                             // Close the database connection
-                            $db->closeCursor();
+                            $tagResult->closeCursor();
                             ?>
                         </select><br><br>
                         <label>&nbsp;</label>
-                        <input type="submit" name="new_series" value="Submit">
+                        <input type="submit" name="new_series" value="Submit"></input>
                     </form>
                 </div>
             </div>
