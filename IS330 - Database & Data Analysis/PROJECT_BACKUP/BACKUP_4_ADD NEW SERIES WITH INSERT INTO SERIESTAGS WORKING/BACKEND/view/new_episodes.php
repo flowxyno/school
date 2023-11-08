@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Left off: Insert Users</title>
+        <title>Left off: Insert Episodes</title>
         <link rel="stylesheet" type="text/css" href="main.css"/>
         <style>
         .container {
@@ -21,7 +21,7 @@
     </head>
     <body>
         <header>
-            <h1>Left off: Insert New Series</h1>
+            <h1>Left off: Insert Episodes</h1>
         </header>
         <main>
             <div class="container"> 
@@ -31,13 +31,13 @@
                     ?>
                 </div>
                 <div class="form-container">
-                    <h1>New Series</h1>
+                    <h1>New Episodes</h1>
 
                     <!-- change the action value to something other than login -->
                     <form action="." method="post" id="new_series_form" class="aligned">
                         <input type="hidden" name="action" value="login">
 
-                        New Series form goes here
+                        New Episodes form goes here
 
                         <label>&nbsp;</label>
                         <input type="submit" value="Submit">
