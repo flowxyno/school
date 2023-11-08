@@ -72,6 +72,7 @@
 
                     <!-- Form to handle the users input for the series -->
                     <form action="index.php?action=show_new_series" method="post" id="new_series_form" class="aligned">
+                        <!--<input type="hidden" name="action" value="newSeries"> -->
 
                         <label for="seriesName">Series Name:</label>
                         <input type="text" name="seriesName" required><br><br>
