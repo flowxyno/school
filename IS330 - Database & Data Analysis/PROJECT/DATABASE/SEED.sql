@@ -8,7 +8,8 @@ INSERT INTO users (firstName, lastName, userName, passwordHash)
 		('Tracy', 'Harvey', 'tharvey', '$2y$10$HwZ.yTiX5z8wII5YBbPzZefUC9lVMSaPIyrMZVR4JD2Ln8hPqonzW'),
         ('Starr', 'Harvey', 'sharvey', '$2y$10$HwZ.yTiX5z8wII5YBbPzZefUC9lVMSaPIyrMZVR4JD2Ln8hPqonzW'),
         ('Kelly', 'Tanner', 'ktanner', '$2y$10$HwZ.yTiX5z8wII5YBbPzZefUC9lVMSaPIyrMZVR4JD2Ln8hPqonzW'),
-        ('Scooby', 'Doo', 'sdoo', '$2y$10$HwZ.yTiX5z8wII5YBbPzZefUC9lVMSaPIyrMZVR4JD2Ln8hPqonzW')
+        ('Scooby', 'Doo', 'sdoo', '$2y$10$HwZ.yTiX5z8wII5YBbPzZefUC9lVMSaPIyrMZVR4JD2Ln8hPqonzW'),
+        ('John', 'Doe', 'user', '$2y$10$526bKJDq7XWQSW2KK8IP6.g66DyuYFDAJ/EtXriMU2Kc6LIWhvfKG')
 ;
     
 -- inserting data into the tags table
