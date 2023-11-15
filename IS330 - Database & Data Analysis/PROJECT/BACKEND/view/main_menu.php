@@ -7,7 +7,7 @@
         include "model/database.php";
     
         // Get user inputs from the form
-        $seriesID = $_POST['seriesID'];
+        $seriesID = $_POST['seriesID']; // variable isn't needed now
         $episodeID = $_POST['episodeID'];
         $trackerID = $_POST['trackerID'];
     
@@ -126,7 +126,9 @@
                                   //TODO: add htmlspecialchars to this drop down menu
                                 while ($episodeRow = $episodeStmt->fetch()) {
                                     $selected = ($episodeRow['episodeID'] == $row['episodeID']) ? "selected" : "";
-                                    echo "<option value='{$episodeRow['episodeID']}' $selected>{$episodeRow['episodeNumber']}</option>";
+                                    $episodeID = $episodeRow['episodeID'];
+                                    $episodeNumber = htmlspecialchars($episodeRow['episodeNumber']);
+                                    echo "<option value='$episodeID' $selected>$episodeNumber</option>";
                                 }
 
                                 echo "</select>";
