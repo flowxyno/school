@@ -24,6 +24,30 @@
         // Close the database connection
         $statement->closeCursor(); 
     }
+
+    if (isset($_POST['new_tracker_insert'])) {
+        // Database connection
+        include "model/database.php";
+    
+        // Get user inputs from the form and session
+        $userID = $_SESSION['logged_in_userID'];
+        $seriesID = $_POST['seriesID'];
+        $episodeID = $_POST['episodeID'];
+    
+        // Insert data into a new trackerID
+        $insertQuest = "INSERT INTO seriesTrackers (userID, seriesID, episodeID) VALUES (:userID, :seriesID, :episodeID)";
+        $statement = $db->prepare($insertQuest);
+        $statement->bindParam(':userID', $userID);
+        $statement->bindParam(':seriesID', $seriesID);
+        $statement->bindParam(':episodeID', $episodeID);
+
+        $statement->execute();
+
+        echo '<script>alert("Tracker Updated successfully");</script>';
+    
+        // Close the database connection
+        $statement->closeCursor(); 
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -55,6 +79,34 @@
             background-color: #999DA0;
         }
     </style>
+    <script>
+        function updateEpisodes() {
+            var seriesID = document.getElementById("series").value;
+            var episodeDropdown = document.getElementById("episode");
+
+            // Clear existing options
+            episodeDropdown.innerHTML = "";
+
+            // Fetch episodes for the selected series using AJAX
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var episodes = JSON.parse(xhr.responseText);
+
+                    // Add new options to the episode dropdown
+                    episodes.forEach(function (episode) {
+                        var option = document.createElement("option");
+                        option.value = episode.episodeID;
+                        option.text = episode.episodeTitle;
+                        episodeDropdown.add(option);
+                    });
+                }
+            };
+
+            xhr.open("GET", "get_episodes.php?seriesID=" + seriesID, true);
+            xhr.send();
+        }
+    </script>
     </head>
     <body>
         <header>
@@ -68,7 +120,8 @@
                     ?>
                 </div>
                 <div class="form-container">
-
+                    
+                    <!--This table contains the seriesTracker information for the logged in user-->
                     <table>
                         <thead>
                             <tr>
@@ -104,9 +157,9 @@
                                 echo "<td><img src='{$row['coverArt']}' alt='Cover Art' style='max-width: 100px;'></td>";
                                 echo "<td>";
                                 echo "<strong><u>".htmlspecialchars($row['seriesName'])."</u></strong><br><br>";
-                                echo "<strong>Last Episode Watched:</strong>".htmlspecialchars($row['episodeNumber'])."<br><br>";
-                                echo "<strong>Title:</strong>".htmlspecialchars($row['episodeTitle'])."<br><br>";
-                                echo "<strong>Synopsis:</strong>".htmlspecialchars($row['episodeSynop'])."<br><br>";
+                                echo "<strong>Last Episode Watched:&ensp;</strong>".htmlspecialchars($row['episodeNumber'])."<br><br>";
+                                echo "<strong>Title:&ensp;</strong>".htmlspecialchars($row['episodeTitle'])."<br><br>";
+                                echo "<strong>Synopsis:&ensp;</strong>".htmlspecialchars($row['episodeSynop'])."<br><br>";
 
                                 
                                 // Start of the seriesTracker update form
@@ -123,7 +176,6 @@
                                 $episodeStmt->execute();
 
                                 // Display episode numbers for the current rows series and select the currently watched one
-                                  //TODO: add htmlspecialchars to this drop down menu
                                 while ($episodeRow = $episodeStmt->fetch()) {
                                     $selected = ($episodeRow['episodeID'] == $row['episodeID']) ? "selected" : "";
                                     $episodeID = $episodeRow['episodeID'];
@@ -135,14 +187,9 @@
                                 echo "&nbsp;&nbsp;";
                                 echo "<input type='submit' name='tracker_update' value='Update'>";
                                 echo "</form>";
-
-
-
                                 echo "</td>";
                                 echo "</tr>";
-
-                                    }
-                            
+                            }
                         } else {
                             echo "<br>";
                             echo "<tr><td colspan='2'>No series tracker data found for the current user</td></tr>";
@@ -150,8 +197,51 @@
                         ?>
                         </tbody>
                     </table>    
+
+                    <br>
+                    <br>
+
+                    <!--This table contains the form to add data to a new series tracker-->
+                    <table>
+                        <thead>
+                            <h1>To Start Tracking a new series provide the series and episode number</h1>
+                        </thead>
+                        <tr>
+                            <td>
+                                <form action="index.php?action=show_main_menu" method="post" class="aligned">
+                                    <label for="series">Select Series:</label>
+                                    <select name="seriesID" id="series" onchange="updateEpisodes()">
+                                        <option value=""></option>
+                                        <?php
+                                            $result = $db->query("SELECT seriesID, seriesName FROM series");
+
+                                            while ($row = $result->fetch()) {
+                                                echo "<option value='" . $row["seriesID"] . "'>" . htmlspecialchars($row['seriesName']) . "</option>";
+                                            }
+                                        ?>
+                                    </select>
+
+                                    <br><br>
+
+                                    <label for="episode">Select Episode:</label>
+                                    <select name="episodeID" id="episode">
+                                        <!-- Options will be dynamically populated using JavaScript -->
+                                    </select>
+
+                                    <br><br>
+
+                                    <input type="submit" name="new_tracker_insert" value="Submit">
+                                </form>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </main>
     </body>
 </html>
+
+
+
+
+<
