@@ -1,1 +1,0 @@
-Steganography is the practice of concealing information within other non-secret data to avoid detection. Unlike cryptography, which focuses on making the content of a message unreadable, steganography aims to make the existence of the message undetectable. One common application of steganography involves hiding data within digital images.
