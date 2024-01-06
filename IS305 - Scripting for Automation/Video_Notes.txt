@@ -1,0 +1,11 @@
+Arithmetic operations
+Variables
+Printing to the screen
+Taking user input
+How to convert between data types so that you can concatenate or use arithmetic operations without running into TypeErrors
+Running a program & interacting with the shell in Mu.
+
+
+
+Clouds Favorite Game = Stray
+Tracy's game count = 702
