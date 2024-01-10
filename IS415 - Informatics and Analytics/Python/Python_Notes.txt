@@ -1,0 +1,215 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#########################################################################################################
+# Comparison Operators
+
+<       Strictly less than
+<=      Less than or equal
+>       Strictly Greater than
+>=      Greater than or equal
+==      equal
+!=      Not equal
+
+#########################################################################################################
+# Boolean Operators
+ 
+or 
+not
+
+The and Operator
+
+True and True = True
+False and True = False
+True and False = False
+False and False = False
+
+example: 
+    x = 12 
+    x > 5 and x < 15
+    # True    # True
+
+The or Operator
+
+True or True = True
+False or True = True
+True or False = True
+False or False = False
+
+example: 
+    y = 5
+    y < 7 or y > 13
+
+
+The not Operator
+
+not True = False
+not False = True
+
+NumPy uses: 
+    logical_and()
+    logical_or()
+    logical_not()
+
+example:
+    np.logical_and(bmi > 21, bmi < 22) # to get just the boolean answers
+    bmi[np.logical_and(bmi > 21, bmi < 22)] # to get the actual bmi answers
+
+################################################################################################
+if, elif, and else: 
+
+if statement
+
+if condition :
+    expression
+
+    example: 
+        z = 4
+        if z % 2 == 0 :           # % 2 will return 0 if z is even 
+            print("z is even")
+
+If / else statement
+
+if condition : 
+    expression
+    else :
+    expression
+
+    example:
+        z = 5 
+        if z% 2 == 0 :
+            print("z is even)
+        else :
+            print("z is odd)
+
+The elif statement
+
+if condition:
+    expression
+elif condition:
+    expression
+elif condition:
+    expression
+
+    example:
+        z = 3 
+        if z % 2 == 0 :
+            print("z is divisible by 2")
+        elif z % 3 == 0 :
+            print("z is divisible by 3")
+        else :
+            Print("z is neither divisible by 2 nor by 3")
+
+####################################################################################################
+Filtering Pandas DataFrames:
+
+Example: 
+        import pandas as pd
+        brics = pd.read_csb("path/to/prics.csv, index_col = 0)
+
+    # You want to keep the countries that have an area of greater than 8 million km
+    # You want a pandas series not a pandas dataframe
+    
+    # Step 1: Get the column
+        brics["area"]
+    
+    # Step 2: Compare
+    # Gives you a series containing booleans stored in variable is_huge
+        is_huge = brics["area"] > 8
+
+    # Step 3: Subset the DataFrame
+        brics[is_huge]
+
+Using boolean Operators
+
+Example:
+    # Only want to display countries with greater than 8 but less than 10 million km
+        import numpy as np
+
+    # Step 1: build the code for the series
+        np.logical_and(brics["area"] > 8, brics["area"] < 10)
+
+    # Step 2: Wrap in brics brackets []
+         brics[np.logical_and(brics["area"] > 8, brics["area"] < 10)]
+
+#########################################################################################################
+While Loop:
+
+    while condition :
+        expression
+
+    example:
+        error = 50.0
+
+        while error > 1:
+            error = error / 4
+            print(error)
+    
+###########################################################################################################
+For loop:
+
+    # For each variable in the sequence, execute the expression
+    for var in seq :
+        expression
+
+    example:
+        fam = [1.73, 1.68, 1.71, 1.89]
+        for height in fam :
+            print(height)
+
+    example: printing the index number for each
+        fam = [1.73, 1.68, 1.71, 1.89]
+        for index, height in enumerate(fam) :
+            print("index " + str(index) + ": " + str(height))
+
+    example: interating a string and captilizing the prints
+        for c in "family" :
+            print(c.capitalize())
+
+#############################################################################################################
+Loop Data Structures part 1: 
+
+Dictionaries: 
+
+    example:
+        for key, value in world.items() :
+            print(key + " -- " + str(value))
+
+
+NumPy Arrays:
+
+    example: 1D array
+        np_height = np.array([1.73, 1.68.1.71, 1.89, 1.79])
+        np_weight = np.array([1.73, 1.68.1.71, 1.89, 1.79])
+        bmi = np_weight / np_height ** 2
+
+        for val in bmi :
+            print (val)
+
+    example: 2D array
+        np_height = np.array([1.73, 1.68.1.71, 1.89, 1.79])
+        np_weight = np.array([1.73, 1.68.1.71, 1.89, 1.79])
+        meas = np.array([np_height, np_weight])
+
+        for val in np.nditer(meas) :
+            print(val)
+
+    
