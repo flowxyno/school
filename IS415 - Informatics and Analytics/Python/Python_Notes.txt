@@ -212,4 +212,96 @@ NumPy Arrays:
         for val in np.nditer(meas) :
             print(val)
 
-    
+#################################################################################################################
+Loop Data Structures part 2:
+
+Pandas Data Structures
+
+    example: Prints Labels then rows
+    import pandas as pd
+    brics = pd.read_csv("brics.csv", index_col = 0)
+
+    for lab, row in brics.iterrows(): 
+        print(lab)
+        print(row)
+
+    example: Selective print
+    for lab, row in brics.iterrows(): 
+        print(lab + ": " + row["capital"])
+
+    example: Add column with for loop
+    for lab, row in brics.iterrows() :
+        #Creating series on every iteration
+        brics.loc[lab, "name_length"] = len(row["country"])
+
+    example: Add column without for loop
+    brics["name_length"] = brics["country"].apply(len)
+    print(brics)
+
+##################################################################################################################
+Random Numbers: 
+
+example: 
+    import numpy as np
+    np.random.rand()    # Pseudo-random number generator
+
+example: coin toss
+    np.random.seed(123)    # seed can be anything
+    coin = np.random.randint(0, 2)  # randomly generate 0 or 1
+
+    if coin == 0 :
+        print("heads")
+    else : 
+        print("tails")
+
+##################################################################################################################
+Random Walk:
+
+# Keeps track of the history of specific random events
+
+example: Heads or tails (not a random walk)
+    import numpy as np 
+    np.random.seed(123)
+    outcomes = []
+    for x in range(10) :          # this will keep track of 10 events
+        coin = np.random.randint(0,2) 
+        if coin == 0 :
+            outcomes.append("heads")
+        else : 
+            outcomes.append("tails")
+    print(outcomes)
+
+example: Heads or tails (Random Walk)
+    import numpy as np
+    np.random.seed(123)
+    tails = [0]
+    for x in range(10) :
+        coin = np.random.randint(0,2)
+        tails.append(tails[x] + coin)
+    print(tails)
+
+#####################################################################################################################
+Distribution:
+
+example: Heads or tails (Random Walk)
+    import numpy as np
+    np.random.seed(123)
+    tails = [0]
+    for x in range(10) :
+        coin = np.random.randint(0,2)
+        tails.append(tails[x] + coin)
+    print(tails)
+
+example: Distribution of 100 flips
+    import numpy as np
+    import matplotlib.pyplot as plt
+    np.random.seed(123)
+    final_tails = []
+    for x in range(100)
+        tails = [0]
+        for x in range(10) :
+            coin = np.random.randint(0,2)
+            tails.append(tails[x] + coin)
+        final_tails.append(tails[-1])
+    plt.hist(final_tails, bins = 10)
+    plt.show()
