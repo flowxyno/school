@@ -1,0 +1,106 @@
+Arithmetic with R
+
+All the normal operators apply with the addition of 
+
+    Exponentation ^ = Raises the power of the number on the left by the number on the right
+
+    Modulo %% = returns the remainder of the division of the number to the left by the number on the right
+
+#######################################################################################################################
+Variable assignment: 
+
+    my_var <- 4
+
+#######################################################################################################################
+Basic Data Types in R:
+
+    Numerics = Decimal Values like 4.5
+    Intergers = whole numbers like 4
+    Logical = TRUE/FALSE                        # Note that these are always in all CAPS
+    characters = text / string
+
+########################################################################################################################
+Checking the Data Type: 
+
+    class() = will check what data type a variable Intergers
+
+########################################################################################################################
+Create a Vector:
+
+    A vector is a 1D array that can hold numeric, character, or logical data
+
+    c() = is the command to create a vector, place the elements between the () separated by comas
+
+    example: 
+        numeric_vector = c(1,2,3)
+        character_vector = c("a", "b", "c")
+        boolean_vector = c(TRUE, FALSE, TRUE)
+
+###########################################################################################################################
+Naming a Vector: 
+
+    names() = the command to name a vector
+
+    example: names each element in roulette_vector with a corisponding day of the week
+        roulette_vector <- c(-24, -50, 100, -350, 10)
+        names(roulette_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday") # you can also assign the days of the week to a variable and use it
+
+#############################################################################################################################
+Calculate Total Winnings:
+
+    sum() = calculates the sum of all elements in a vector
+
+    example:
+        total_poker <- sum(poker_vector)
+
+#############################################################################################################################
+Selecting Elements in a Vector:
+
+    example:
+    # It seems that R indexes start from 1 not 0
+    my_vector[1]
+
+    example: 
+    # selects the first and fifth elements
+    poker_vector[c(1,5)]
+
+    example: 
+    # selects elements 2-4 including 4
+    poker_vector[c(2:4)]
+
+    example: 
+    # if you have named your elements you can select them by name
+    poker_vector[c("Monday", "Tuesday")]
+
+##########################################################################################################################
+Calculating The average of values
+
+    mean() = calculates the average of the the values given to it
+
+    example:
+    poker_start <- poker_vector[c("Monday", "Tuesday", "Wednesday")
+    mean(poker_start)]
+
+##########################################################################################################################
+Comparison operators
+
+    < = less than
+    > = Greater than
+    <= = Less than or equal to 
+    >= = Greater than or equal to 
+    == = equal to each other
+    != = Not equal to each other
+
+    example:
+    selection_vector <- poker_vector > 0    # creates a boolean array
+    poker_winning_days <- poker_vector[selection_vector]    # This will only select elements that are true and assign the values
+
+###########################################################################################################################
+Advanced Selection:
+
+    example:
+    selection_vector <- roulette_vector > 0
+    roulette_winning_days <- roulette_vector[selection_vector]
+
+
+
