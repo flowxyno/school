@@ -1,0 +1,30 @@
+
+
+
+
+
+
+
+Have a development environment setup where you can write and test code in your scripting language
+Have a general understanding of some of the basic building blocks of programming in the language: things like arithmetic operations, variables, printing to the screen, different primitive data types like integers, strings, etc. For scripting languages like Batch or Bash that highly interact with your operating system, review how to create folders, move files/folders, and similar basic file system management skills.
+
+
+
+Data types in variables Int, float, str
+
+Printing to terminal in PS 
+
+Arithmetic in powershell
+
+Creating a new folder 
+
+Create folder and file to move
+
+moving a file from one folder to another
+
+
+
+Working Directory: 
+S:\Testing_Ground
+
+powershell -ExecutionPolicy Bypass -File 'P:\REPOSITORIES\school\IS305 - Scripting for Automation\Code\Demos\Mod_3_Demo.ps1'

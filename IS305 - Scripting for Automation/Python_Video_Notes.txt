@@ -1,0 +1,25 @@
+
+
+
+
+
+
+
+Module Requirements:
+Create, add to, and change the values in a list
+Must demonstrate slicing
+Must demonstrate looping over a list with for or while loop
+Must demonstrate at least 2 list methods you learned from the reading
+Create, add to, and change the values in a dictionary
+Must demonstrate looping over a dictionary using .items(), .keys(), or .values() methods
+
+
+List Data:
+Pal Types Water, Grass, Fire, Electric, Ground, Ice, Neutral        Dark, Dragon
+
+
+
+Dictionary Data:
+
+pal attributes Lamball Neutral Lifmunk Grass Foxparks Electric     
+
