@@ -6,20 +6,11 @@
 
 
 Module Requirements:
-Create, add to, and change the values in a list
-Must demonstrate slicing
-Must demonstrate looping over a list with for or while loop
-Must demonstrate at least 2 list methods you learned from the reading
-Create, add to, and change the values in a dictionary
-Must demonstrate looping over a dictionary using .items(), .keys(), or .values() methods
-
-
-List Data:
-Pal Types Water, Grass, Fire, Electric, Ground, Ice, Neutral        Dark, Dragon
-
-
-
-Dictionary Data:
-
-pal attributes Lamball Neutral Lifmunk Grass Foxparks Electric     
+Manipulating Strings in Python (Ch 6)
+Explain & demonstrate how to use escape characters within a string, when necessary
+Explain & demonstrate at least 3 string methods from the chapter
+Using the re module to search for particular regular expressions within a string (Ch 7)
+Explain and demonstrate at least 3 new pieces of regex syntax you learned from the Chapter
+Using the PyInputPlus module for better input validation (Ch 8)
+Explain and demonstrate at least 2 different PyInputPlus functions with 2 different keyword arguments
 
