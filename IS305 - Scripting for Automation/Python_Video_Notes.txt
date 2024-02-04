@@ -6,11 +6,13 @@
 
 
 Module Requirements:
-Manipulating Strings in Python (Ch 6)
-Explain & demonstrate how to use escape characters within a string, when necessary
-Explain & demonstrate at least 3 string methods from the chapter
-Using the re module to search for particular regular expressions within a string (Ch 7)
-Explain and demonstrate at least 3 new pieces of regex syntax you learned from the Chapter
-Using the PyInputPlus module for better input validation (Ch 8)
-Explain and demonstrate at least 2 different PyInputPlus functions with 2 different keyword arguments
 
+Reading & Writing Files (Ch 9)
+Demonstrate that you are able to write a Python program that (1) opens and/or creates, (2) reads, (3) writes, and (4) closes files using Python's os and pathlib modules. Use any module from the textbook to save data to a file that can be "read" by the same program in a future program execution. Demonstrate this program in action.
+
+Organizing Files (Ch 10)
+Demonstrate that you are able to write a Python program that walks a particular folder structure of your choosing and performs some sort of action on those folders (like moving or renaming the folders). Demonstrate this program in action.
+
+
+Working Dir: 
+S:\Testing_Grounds
