@@ -7,12 +7,11 @@
 
 Module Requirements:
 
-Reading & Writing Files (Ch 9)
-Demonstrate that you are able to write a Python program that (1) opens and/or creates, (2) reads, (3) writes, and (4) closes files using Python's os and pathlib modules. Use any module from the textbook to save data to a file that can be "read" by the same program in a future program execution. Demonstrate this program in action.
+Choose one (1) of the options below:
+Modify one of the Python programs from the textbook (like the XKCD comic scraping program) to automate some task that's more useful to you (essentially, personalize it!)
 
-Organizing Files (Ch 10)
-Demonstrate that you are able to write a Python program that walks a particular folder structure of your choosing and performs some sort of action on those folders (like moving or renaming the folders). Demonstrate this program in action.
+Develop one of the webscraping program ideas suggested by the textbook or of your own design, using the webbrowser, requests, bs4, and/or selenium modules
 
+For this assignment, you do not need to record your entire coding session! (I understand it may take you a couple of hours to develop your program!) For your recording, walk me through your resulting, working program. Explain how the program works and make sure to execute the program and show me it working as intended.
 
-Working Dir: 
-S:\Testing_Grounds
+Make sure your code is clean and includes comments.
