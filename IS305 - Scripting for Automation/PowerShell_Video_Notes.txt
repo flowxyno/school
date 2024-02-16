@@ -5,8 +5,10 @@
 
 
 
-Discussing which learning materials you engaged with this week and what concepts you learned from each learning material
+Sharing any ideas you have so far for what automations you'd like to make with your scripting language later this quarter
+
+Discussing which learning materials you engaged with this week and what concepts/tools/packages you learned
 
 Demonstrating the concepts you learned by writing & executing some code in your preferred IDE
 
-powershell -ExecutionPolicy Bypass -File 'P:\REPOSITORIES\school\IS305 - Scripting for Automation\Code\Demos\Mod_5_Demo1.ps1'
+powershell -ExecutionPolicy Bypass -File 'P:\REPOSITORIES\school\IS305 - Scripting for Automation\Code\Network_Utilities\Main_Menu.ps1'
