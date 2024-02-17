@@ -14,7 +14,7 @@ function sortPhotos {
     $sourceDirectory = Read-Host "Enter the source directory for photos"
     $photoDestination = Read-Host "Enter the destination directory for sorted photos"
     
-    # Move various phot files files to the photo destination
+    # Move various photo files files to the photo destination
     $jpgFiles = Get-ChildItem -Path $sourceDirectory -Filter *.jpg
     $jpegFiles = Get-ChildItem -Path $sourceDirectory -Filter *.jpeg
     $pngFiles = Get-ChildItem -Path $sourceDirectory -Filter *.png
