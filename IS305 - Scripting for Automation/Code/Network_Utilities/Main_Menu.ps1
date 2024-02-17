@@ -5,7 +5,7 @@ function showMenu {
     Write-Host "1. Sorting File Types"
     Write-Host "2. Option 2"
     Write-Host "3. Option 3"
-    Write-Host "Exit"
+    Write-Host "4. Exit"
     $option = Read-Host "Enter your selection to begin: "
     return $option
 }
@@ -24,9 +24,12 @@ while($loop -eq $True) {
         '3' {
             Write-Host "This function has not been defined yet."
         }
-        'Exit' {
+        '4' {
             Write-Host "Exiting ..."
             $loop = $False
+        }
+        default {
+            Write-Host "Invalid choice. Please try again."
         }
     }
 }
