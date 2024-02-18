@@ -7,11 +7,6 @@
 
 Module Requirements:
 
-Choose one (1) of the options below:
-Modify one of the Python programs from the textbook (like the XKCD comic scraping program) to automate some task that's more useful to you (essentially, personalize it!)
+For this assignment, choose to work with either Excel or Google Sheets. No need to demonstrate both!
 
-Develop one of the webscraping program ideas suggested by the textbook or of your own design, using the webbrowser, requests, bs4, and/or selenium modules
-
-For this assignment, you do not need to record your entire coding session! (I understand it may take you a couple of hours to develop your program!) For your recording, walk me through your resulting, working program. Explain how the program works and make sure to execute the program and show me it working as intended.
-
-Make sure your code is clean and includes comments.
+Demonstrate that you are able to write a Python program that reads a spreadsheet and automates some process by reading data from more than 100 cells. You can use any spreadsheet you'd like (except the ones from our textbook). Try to personalize your example or analyze some data from a source you find interesting. (Need inspiration? Check out Kaggle.comLinks to an external site. for datasets you could use. Remember, CSV data can easily be saved as XLSX.)

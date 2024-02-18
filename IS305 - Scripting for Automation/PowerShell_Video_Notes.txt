@@ -5,10 +5,12 @@
 
 
 
-Sharing any ideas you have so far for what automations you'd like to make with your scripting language later this quarter
+Explaining the project you chose to pursue this week. Specifically:
 
-Discussing which learning materials you engaged with this week and what concepts/tools/packages you learned
-
-Demonstrating the concepts you learned by writing & executing some code in your preferred IDE
-
-powershell -ExecutionPolicy Bypass -File 'P:\REPOSITORIES\school\IS305 - Scripting for Automation\Code\Network_Utilities\Main_Menu.ps1'
+What process your script automates
+How your script saves you time and/or effort (or saves time/effort for someone you know) - even if it's obvious
+Demonstrate how your automation works
+If you didn't use any reference material for your script, explicitly state so. If your script was inspired by someone else's script:
+Cite the starter code or code you used as a reference developed by another programmer (i.e. show the website you obtained code from)
+Explain what you had to do to modify that code for your own purposes
+Explain how your script works in sufficient detail that it's obvious that you understand how it works
