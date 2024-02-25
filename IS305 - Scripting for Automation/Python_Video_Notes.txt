@@ -7,6 +7,13 @@
 
 Module Requirements:
 
-For this assignment, choose to work with either Excel or Google Sheets. No need to demonstrate both!
+For this assignment, you'll choose to work with one file type from Ch 15 and one file type from Ch 16.
 
-Demonstrate that you are able to write a Python program that reads a spreadsheet and automates some process by reading data from more than 100 cells. You can use any spreadsheet you'd like (except the ones from our textbook). Try to personalize your example or analyze some data from a source you find interesting. (Need inspiration? Check out Kaggle.comLinks to an external site. for datasets you could use. Remember, CSV data can easily be saved as XLSX.)
+Script a Python program that takes a file type from Ch 16 (JSON or CSV) and creates a sets of PDF or DOCX files (Ch 15). Personalize your example and try to make it useful to you! Examples of scripts appropriate for this assignment:
+
+A script that takes JSON that contains movie titles & other statistics organized by genre, and then creates a set of DOCX files, one per genre, that organizes the information in a pleasing way (styled text)
+
+A script that takes a CSV file that contains names, birthdays, and addresses, and then creates a set of "happy birthday" letters using the names, birthday, and address information. These DOCX files could optionally then be saved to PDFs.
+
+For this assignment, you do not need to record your entire coding session! (I understand it may take you a couple of hours to develop your program!) For your recording, walk me through your resulting, working program. Explain how the program works and make sure to execute the program and show me it working as intended.
+Make sure your code is clean and includes comments.
