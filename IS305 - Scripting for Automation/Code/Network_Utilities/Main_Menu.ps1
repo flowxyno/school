@@ -4,7 +4,7 @@ function showMenu {
     Write-Host "Main Menu:"
     Write-Host "1. Reset Network Shares (Restart PS with Admin Permissions)"
     Write-Host "2. Sorting File Types"
-    Write-Host "3. Option 3"
+    Write-Host "3. Batch File Rename"
     Write-Host "4. Exit"
     $option = Read-Host "Enter your selection to begin: "
     return $option
@@ -22,7 +22,7 @@ while($loop -eq $True) {
             .\Sorting_Files_With_PowerShell.ps1 # Calls an ouside script for sorting files
         }
         '3' {
-            Write-Host "This function has not been defined yet."
+            .\Mass_File_Rename.ps1 # Calls and outside script for renaming files enmasse
         }
         '4' {
             Write-Host "Exiting ..."
