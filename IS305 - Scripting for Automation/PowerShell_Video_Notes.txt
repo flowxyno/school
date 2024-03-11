@@ -5,12 +5,39 @@
 
 
 
-Explaining the project you chose to pursue this week. Specifically:
+Module Requirements:
 
-What process your script automates
-How your script saves you time and/or effort (or saves time/effort for someone you know) - even if it's obvious
-Demonstrate how your automation works
-If you didn't use any reference material for your script, explicitly state so. If your script was inspired by someone else's script:
-Cite the starter code or code you used as a reference developed by another programmer (i.e. show the website you obtained code from)
-Explain what you had to do to modify that code for your own purposes
-Explain how your script works in sufficient detail that it's obvious that you understand how it works
+Compare and contrast your chosen scripting language with Python. Choose at least 3 aspects of your language to compare and contrast:
+
+1: Syntax & Readability: are there major/obvious differences in syntax between the language? How readable do you find one language compared to the other?
+
+# PowerShell script to list files recursively
+$files = Get-ChildItem -Path "C:\path\to\directory" -Recurse
+foreach ($file in $files) {
+    Write-Output $file.FullName
+}
+
+# Python script to list files recursively
+import os
+
+def list_files(directory):
+    for root, dirs, files in os.walk(directory):
+        for file in files:
+            print(os.path.join(root, file))
+
+list_files("C:\\path\\to\\directory")
+
+
+2: Availability of Libraries: have you found there to be more libraries & frameworks available for one language over the other?
+
+
+3: Platform Compatibility: can the languages be used on multiple platforms or are they limited to specific operating systems?
+
+
+6: Learning Curve: how easy is each language for beginners to pick up?
+
+if (6 == x)
+
+if (6 -eq x)
+
+Be sure to use visuals (like code snippets or relevant website resources) to support your claims.
